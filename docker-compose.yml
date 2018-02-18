@@ -6,7 +6,17 @@ services:
     image: postgres
     environment:
       POSTGRES_USER: app
-
+    # ports:
+    #   - '5432:5432'
+    # volumes:
+    #   - 'postgres:/var/lib/postgresql/data'
+  redis:
+    image: 'redis'
+    # command: redis-server --requirepass 12345678
+    # ports:
+    #   - '6379:6379'
+    # volumes:
+    #   - 'redis:/data'
   app:
     #read_only: true
     build:
@@ -23,3 +33,11 @@ services:
       - "/tmp:/tmp"
     depends_on:
       - db
+      - redis
+  
+  sidekiq:
+    build:
+      context: services/app
+      dockerfile: Dockerfile.development
+    command: sh -c "bundle exec sidekiq"
+

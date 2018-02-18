@@ -8,7 +8,7 @@ require "active_record/railtie"
 require "active_storage/engine"
 require "action_controller/railtie"
 require "action_mailer/railtie"
-require "action_view/railtie"
+# require "action_view/railtie"
 require "action_cable/engine"
 # require "sprockets/railtie"
 require "rails/test_unit/railtie"
@@ -19,6 +19,11 @@ Bundler.require(*Rails.groups)
 
 module App
   class Application < Rails::Application
+    logger = ActiveSupport::Logger.new(STDOUT)
+    logger.formatter = config.log_formatter
+    config.log_tags = [:subdomain, :uuid]
+    config.logger = ActiveSupport::TaggedLogging.new(logger)
+    config.api_only = true
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 

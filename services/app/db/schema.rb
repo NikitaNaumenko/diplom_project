@@ -16,10 +16,15 @@ ActiveRecord::Schema.define(version: 2018_02_11_151133) do
   enable_extension "plpgsql"
 
   create_table "accounts", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
+    t.string "name", null: false
+    t.string "email", null: false
+    t.string "phone", null: false
+    t.datetime "confirmated_at"
+    t.string "confirmation_code"
+    t.string "confirmation_sending_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_accounts_on_name"
   end
 
   create_table "active_storage_attachments", force: :cascade do |t|
