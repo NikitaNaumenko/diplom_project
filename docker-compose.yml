@@ -18,6 +18,8 @@ services:
     # volumes:
     #   - 'redis:/data'
   app:
+    stdin_open: true
+    tty: true
     #read_only: true
     build:
       context: services/app

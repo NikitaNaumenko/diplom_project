@@ -7,7 +7,8 @@ app-build:
 	docker-compose build
 app-setup: app-build
 	docker-compose run --user=$(USER) app bin/setup
-
+app-update:
+	docker-compose run --user=$(USER) app bin/bundle
 app-bash:
 	docker-compose run --user=$(USER) app bash
 app-console:
