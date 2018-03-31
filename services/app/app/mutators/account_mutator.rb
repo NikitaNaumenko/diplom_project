@@ -1,7 +1,9 @@
 class AccountMutator
   class << self
     def create!(params)
-      AccountType.create(params)
+      account = AccountType.create(params)
+      AccountWorker.perform_async(account)
+      account
     end
   end
 end

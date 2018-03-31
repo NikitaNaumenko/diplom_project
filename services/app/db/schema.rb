@@ -10,15 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_02_11_151133) do
+ActiveRecord::Schema.define(version: 2018_03_31_132612) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "accounts", force: :cascade do |t|
     t.string "name", null: false
+    t.string "registred_user_name", null: false
     t.string "email", null: false
-    t.string "phone", null: false
+    t.string "phone"
     t.datetime "confirmated_at"
     t.string "confirmation_code"
     t.string "confirmation_sending_date"
@@ -46,6 +47,21 @@ ActiveRecord::Schema.define(version: 2018_02_11_151133) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "employees", force: :cascade do |t|
+    t.string "first_name", null: false
+    t.string "last_name"
+    t.string "patronymic"
+    t.string "email"
+    t.string "login"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "account_id"
+    t.index ["account_id"], name: "index_employees_on_account_id"
+    t.index ["email"], name: "index_employees_on_email"
+    t.index ["login"], name: "index_employees_on_login"
   end
 
 end

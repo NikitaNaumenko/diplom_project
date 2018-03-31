@@ -3,5 +3,6 @@ module Api
     include FastJsonapi::ObjectSerializer
 
     set_id :id
+    attributes :name
   end
 end

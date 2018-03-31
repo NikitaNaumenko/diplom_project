@@ -3,7 +3,7 @@ module Api
     def create
       if validation.success?
         account = AccountMutator.create!(permitted_attribute)
-        respond_for_save(account, AccountSerializer.new(account).serialized_json)
+        respond_for_save(account, AccountSerializer)
       else
         respond_for_validation_errors(validation.errors)
       end

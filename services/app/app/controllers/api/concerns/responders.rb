@@ -10,7 +10,7 @@ module Api
           if record.errors.any?
             render json: { error: record.errors.messages }, status: :unprocessable_entity
           else
-            render json: record, serializer: serializer
+            render json: serializer.new(record).serialized_json
           end
         end
 

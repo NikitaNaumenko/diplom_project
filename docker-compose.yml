@@ -11,12 +11,12 @@ services:
     # volumes:
     #   - 'postgres:/var/lib/postgresql/data'
   redis:
-    image: 'redis'
-    # command: redis-server --requirepass 12345678
-    # ports:
-    #   - '6379:6379'
-    # volumes:
-    #   - 'redis:/data'
+    image: 'redis:latest'
+    command: redis-server
+    ports:
+      - '6379:6379'
+# c    volumes:
+#       - 'redis:/data'
   app:
     stdin_open: true
     tty: true
@@ -25,6 +25,7 @@ services:
       context: services/app
       dockerfile: Dockerfile.development
       # dockerfile: Dockerfile
+    # command: sh -c "rm -f tmp/pids/server.pid && bin/rails s"
     command: sh -c "rm -f tmp/pids/server.pid && bin/rails s -b 0.0.0.0"
       # env_file: ".env.development"
     ports:
@@ -36,10 +37,23 @@ services:
     depends_on:
       - db
       - redis
+    links:
+      - redis
+    env_file:
+      ".env"
   
   sidekiq:
     build:
       context: services/app
       dockerfile: Dockerfile.development
     command: sh -c "bundle exec sidekiq"
+    links:
+      - redis
+    depends_on:
+      - redis
+      - db
+    volumes:
+      - "./services/app:/usr/src/app"
+    env_file:
+      - ".env"
 
