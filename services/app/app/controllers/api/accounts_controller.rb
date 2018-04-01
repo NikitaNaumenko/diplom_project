@@ -1,4 +1,5 @@
 module Api
+  # Controller for accounts
   class AccountsController < Api::ApplicationController
     def create
       if validation.success?
