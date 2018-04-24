@@ -1,3 +1,4 @@
+# Account store for db
 class Account < ApplicationRecord
-  attr_accessor :id
+  has_many :users
 end

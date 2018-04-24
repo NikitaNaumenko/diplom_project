@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_03_31_132612) do
+ActiveRecord::Schema.define(version: 2018_04_21_063400) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,19 +49,21 @@ ActiveRecord::Schema.define(version: 2018_03_31_132612) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "employees", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
+    t.integer "inner_id", null: false
     t.string "first_name", null: false
     t.string "last_name"
     t.string "patronymic"
-    t.string "email"
-    t.string "login"
-    t.string "password_digest"
+    t.string "email", null: false
+    t.string "login", null: false
+    t.string "password_digest", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "account_id"
-    t.index ["account_id"], name: "index_employees_on_account_id"
-    t.index ["email"], name: "index_employees_on_email"
-    t.index ["login"], name: "index_employees_on_login"
+    t.index ["account_id", "email"], name: "index_users_on_account_id_and_email"
+    t.index ["account_id", "inner_id"], name: "index_users_on_account_id_and_inner_id"
+    t.index ["account_id", "login"], name: "index_users_on_account_id_and_login"
+    t.index ["account_id"], name: "index_users_on_account_id"
   end
 
 end

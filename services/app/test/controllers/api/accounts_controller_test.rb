@@ -19,8 +19,6 @@ class Api::AccountsControllerTest < ActionDispatch::IntegrationTest
 
     post accounts_url, params: { account: account_params }
     assert_response :unprocessable_entity
-    # assert_includes parsed_json_body, 'errors'
-    # assert_includes parsed_json_body['errors'], 'name'
   end
 
   test 'should not save account without email' do

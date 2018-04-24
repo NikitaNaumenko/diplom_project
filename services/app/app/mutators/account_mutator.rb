@@ -1,3 +1,4 @@
+# Incapsulate logic for accounts
 class AccountMutator
   class << self
     def create!(params)

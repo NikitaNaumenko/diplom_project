@@ -27,6 +27,14 @@ class Forms::AccountsCreateValidationTest < ActiveSupport::TestCase
     assert_not validation.success?
   end
 
+  test '.failure with wrong format email' do
+    permitted_attributes = { name: 'name',
+                             phone: '12345678',
+                             registred_user_name: 'name' }
+    validation = Forms::Accounts::CreateValidation.call(permitted_attributes)
+    assert_not validation.success?
+  end
+
   test '.failure without phone' do
     permitted_attributes = { name: 'name',
                              email: 'email@email.ru',
