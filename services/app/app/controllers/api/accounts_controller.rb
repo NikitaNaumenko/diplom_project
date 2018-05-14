@@ -2,7 +2,6 @@ module Api
   # Controller for accounts
   class AccountsController < Api::ApplicationController
     def create
-      debugger
       if validation.success?
         account = AccountMutator.create!(permitted_attribute)
         respond_for_save(account, AccountSerializer)
