@@ -7,7 +7,7 @@ class CreateAccounts < ActiveRecord::Migration[5.2]
       t.string :phone
       t.datetime :confirmated_at
       t.string :confirmation_code
-      t.string :confirmation_sending_date
+      t.datetime :confirmation_sending_date
 
       t.timestamps
     end

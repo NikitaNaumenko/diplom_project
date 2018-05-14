@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2018_04_21_063400) do
     t.string "phone"
     t.datetime "confirmated_at"
     t.string "confirmation_code"
-    t.string "confirmation_sending_date"
+    t.datetime "confirmation_sending_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_accounts_on_name"

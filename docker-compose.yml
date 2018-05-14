@@ -57,15 +57,15 @@ services:
     env_file:
       - ".env"
   
-  client-app:
-    container_name: client-app
+  react-app:
+  #   container_name: client-app
     build:
-      context: services/client-app
+      context: services/react-app
       dockerfile: Dockerfile.development
-    command: npm start
+    command: yarn start
     volumes:
-      - './services/client-app:/usr/src/app'
-      - './services/client-app:/usr/src/app/node_modules'
+      - './services/react-app:/usr/src/app'
+      # - './services/react-app:/usr/src/app/node_modules'
     ports:
       - '3000:3000'
     environment:
