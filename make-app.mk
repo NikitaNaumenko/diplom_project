@@ -7,8 +7,14 @@ app-build:
 	docker-compose build
 app-setup: app-build
 	docker-compose run --user=$(USER) app bin/setup
-app-update:
+app-gems-install:
 	docker-compose run --user=$(USER) app bin/bundle
+app-gem-update:
+	docker-compose run --user=$(USER) app bin/bundle update $(GEM_NAME)
+update-rails:
+	docker-compose run --user=$(USER) app bin/bundle update rails
+app-gem-update-rails:
+	docker-compose run --user=$(USER) app bin/rails app:update
 app-bash:
 	docker-compose run --user=$(USER) app bash
 app-console:
