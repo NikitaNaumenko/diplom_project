@@ -1,0 +1,4 @@
+ruby:
+  config_file: 'services/app/.rubocop.yml'
+eslint:
+  enabled: true
