@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Forms
   # Base dry validation schema
   class BaseValidation < Dry::Validation::Schema

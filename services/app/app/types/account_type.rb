@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Type for work account model
 class AccountType < Account
   include ApplicationType

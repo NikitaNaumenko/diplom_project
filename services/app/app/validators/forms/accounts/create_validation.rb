@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Forms
   module Accounts
     CreateValidation = Dry::Validation.Form(Forms::BaseValidation) do

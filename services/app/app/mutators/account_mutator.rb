@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Incapsulate logic for accounts
 class AccountMutator
   class << self

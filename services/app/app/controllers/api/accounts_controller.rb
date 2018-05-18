@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Api
   # Controller for accounts
   class AccountsController < Api::ApplicationController

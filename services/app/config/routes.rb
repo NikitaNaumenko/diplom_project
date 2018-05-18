@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   # Production mode
   # namespace :api, defaults: { format: :json }, constraints: { protocol: /https/ } do
