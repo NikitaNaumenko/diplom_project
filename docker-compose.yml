@@ -62,12 +62,13 @@ services:
     build:
       context: services/react-app
       dockerfile: Dockerfile.development
-    command: yarn start
+    command: npm start
+    # command: yarn start
     volumes:
       - './services/react-app:/usr/src/app'
       # - './services/react-app:/usr/src/app/node_modules'
     ports:
-      - '3000:3000'
+      - '8080:8080'
     environment:
       - NODE_ENV=development
       - CHOKIDAR_USEPOLLING=true

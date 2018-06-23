@@ -20,4 +20,9 @@ AllCops:
 Metrics/MethodLength:
   Max: 10
   Exclude: 
-    - 'spec/**/*'
+    - 'test/**/*'
+Style/Documentation:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Exclude:
+    - 'test/**/*'

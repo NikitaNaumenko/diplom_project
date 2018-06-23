@@ -8,7 +8,7 @@ app-build:
 app-setup: app-build
 	docker-compose run --user=$(USER) app bin/setup
 app-gems-install:
-	docker-compose run --user=$(USER) app bin/bundle
+	docker-compose run app bin/bundle
 app-gem-update:
 	docker-compose run --user=$(USER) app bin/bundle update $(GEM_NAME)
 update-rails:
@@ -25,5 +25,7 @@ app-migrate:
 	docker-compose run --user=$(USER) app bin/rails db:migrate
 app-rollback:
 	docker-compose run --user=$(USER) app bin/rails db:rollback
-# app-bash:
-# 	docker-compose run app bash
+react-app-add-lib:
+	docker-compose run react-app yarn install
+	# docker-compose run react-app npm install --save-dev react-hot-loader
+
