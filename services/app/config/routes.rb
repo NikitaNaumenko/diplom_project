@@ -1,13 +1,3 @@
-# frozen_string_literal: true
-
 Rails.application.routes.draw do
-  # Production mode
-  # namespace :api, defaults: { format: :json }, constraints: { protocol: /https/ } do
-
-  # namespace :api, defaults: { format: :json }, constraints: { protocol: /http/ } do
-  #   resources :accounts
-  # end
-  scope module: :api do
-    resources :accounts
-  end
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

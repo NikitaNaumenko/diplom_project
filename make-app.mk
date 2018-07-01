@@ -6,7 +6,7 @@ app:
 app-build:
 	docker-compose build
 app-setup: app-build
-	docker-compose run --user=$(USER) app bin/setup
+	docker-compose run app bin/setup
 app-gems-install:
 	docker-compose run app bin/bundle
 app-gem-update:

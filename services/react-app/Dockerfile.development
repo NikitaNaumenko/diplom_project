@@ -1,5 +1,0 @@
-FROM naumenkonikita/react
-
-EXPOSE 8080
-RUN npm install webpack -g
-RUN yarn install
