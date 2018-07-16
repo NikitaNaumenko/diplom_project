@@ -20,9 +20,12 @@ AllCops:
 Metrics/MethodLength:
   Max: 10
   Exclude: 
+    - 'db/migrate/*'
     - 'test/**/*'
 Style/Documentation:
   Enabled: false
 Style/ClassAndModuleChildren:
   Exclude:
     - 'test/**/*'
+Metrics/LineLength:
+  Max: 110
