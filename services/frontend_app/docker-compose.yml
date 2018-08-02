@@ -1,0 +1,19 @@
+version: '3.5'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.development
+    # command: yarn start
+    command: npm run start
+    volumes:
+      - './:/usr/src/app'
+      - './node_modules/:/usr/src/app/node_modules'
+      
+    ports: 
+      - '8080:8080'
+      # - '3000:3000'
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true

@@ -1,0 +1,3 @@
+FROM naumenkonikita/react
+
+EXPOSE 8080
