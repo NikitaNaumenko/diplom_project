@@ -24,10 +24,12 @@ app-console:
 app-migrate-down:
 	docker-compose run --user=$(USER) app bin/rails db:migrate:up VERSION=$(VERSION)
 app-migrate:
-	docker-compose run --user=$(USER) app bin/rails db:migrate
+	docker-compose run app bin/rails db:migrate
 app-rollback:
-	docker-compose run --user=$(USER) app bin/rails db:rollback
+	docker-compose run app bin/rails db:rollback
 react-app-add-lib:
 	docker-compose run react-app yarn install
+app-db-drop:
+	docker-compose run app bin/rails db:drop db:create db:migrate
 	# docker-compose run react-app npm install --save-dev react-hot-loader
 
