@@ -2,6 +2,8 @@ USER = "$(shell id -u):$(shell id -g)"
 
 app:
 	docker-compose up
+rails-app:
+	docker-compose up app
 
 app-build:
 	docker-compose build
