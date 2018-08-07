@@ -4,7 +4,6 @@ app:
 	docker-compose up
 rails-app:
 	docker-compose up app
-
 app-build:
 	docker-compose build
 app-setup: app-build
