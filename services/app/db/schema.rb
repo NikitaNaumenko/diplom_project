@@ -17,9 +17,7 @@ ActiveRecord::Schema.define(version: 2018_08_06_181413) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "name", null: false
-    t.string "registered_name", null: false
     t.string "email", null: false
-    t.string "registered_email", null: false
     t.string "phone"
     t.datetime "confirmation_at"
     t.string "confirmation_code"

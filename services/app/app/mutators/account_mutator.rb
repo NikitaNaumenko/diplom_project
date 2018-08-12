@@ -3,11 +3,11 @@
 class AccountMutator
   class << self
     def create!(params)
-      account_params = params.merge(registered_name: params[:name],
-                                    registered_email: params[:email])
-      # require 'byebug'
-      # byebug
-      AccountType.create(account_params)
+      account_params = params.except(:user)
+      AccountType.create(account_params).tap do |account|
+        user_params = params.require(:user).merge(account_id: account.id)
+        UserMutator.create!(user_params)
+      end
     end
 
     def validate!(params)

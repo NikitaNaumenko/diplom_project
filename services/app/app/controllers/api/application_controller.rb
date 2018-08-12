@@ -14,5 +14,9 @@ module Api
       @current_user = AuthorizeApiRequest.call(headers: request.headers).user
       render json: { error: 'Not Authorized' }, status: 401 unless @current_user
     end
+
+    def account
+      @account ||= Account.find_by(name: request.subdomain)
+    end
   end
 end

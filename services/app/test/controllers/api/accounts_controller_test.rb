@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class AccountsControllerTest < ActionDispatch::IntegrationTest
+class Api::AccountsControllerTest < ActionDispatch::IntegrationTest
   test 'account create' do
     account_params = { name: 'account',
                        email: 'account@account.ru' }

@@ -29,3 +29,11 @@ Style/ClassAndModuleChildren:
     - 'test/**/*'
 Metrics/LineLength:
   Max: 110
+
+Style/RedundantSelf:
+  Exclude:
+    - 'app/models/concerns/*'
+
+
+
+

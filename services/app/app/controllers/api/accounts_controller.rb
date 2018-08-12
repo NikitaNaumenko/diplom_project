@@ -3,6 +3,8 @@
 module Api
   # Controller for accounts
   class AccountsController < Api::ApplicationController
+    skip_before_action :authenticate_request, only: :create
+
     def create
       validation_result = account_mutator.validate!(account_params)
       if validation_result.success?

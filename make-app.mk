@@ -21,7 +21,7 @@ app-bash:
 app-console:
 	docker-compose run --user=$(USER) app bin/rails console
 app-migrate-down:
-	docker-compose run --user=$(USER) app bin/rails db:migrate:up VERSION=$(VERSION)
+	docker-compose run --user=$(USER) app bin/rails db:migrate:down VERSION=$(VERSION)
 app-migrate:
 	docker-compose run app bin/rails db:migrate
 app-rollback:

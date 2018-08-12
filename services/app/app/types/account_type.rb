@@ -4,6 +4,5 @@
 class AccountType < Account
   include ApplicationType
 
-  permit :name, :phone, :email, :registered_name, :registered_email
-  attr_accessor :phone
+  permit :name, :phone, :email, user: {}
 end
