@@ -1,0 +1,26 @@
+{
+  "extends": ["eslint-config-airbnb-base", "prettier", 'plugin:vue/essential'],
+
+  "plugins": ["prettier", "vue"],
+
+  "env": {
+    "browser": true
+  },
+
+  "rules": {
+    "prettier/prettier": "error"
+  },
+
+
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": {
+          "resolve": {
+            "modules": ["frontend", "node_modules"]
+          }
+        }
+      }
+    }
+  }
+}

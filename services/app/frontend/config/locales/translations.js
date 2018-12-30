@@ -3,6 +3,15 @@ export default {
     buttons: {
       create: "Создать"
     },
+    account: {
+      form: {
+        title: "Регистрация нового аккаунта",
+        name: "Название аккаунта",
+        firstName: "Имя владельца аккаунта",
+        email: "Email",
+        password: "Пароль"
+      }
+    },
     sidebar: {
       my_information: "Моя информация",
       logout: "Выход",

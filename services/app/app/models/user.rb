@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :user_skills, class_name: User::Skill.name, dependent: :nullify
   has_many :skills, through: :user_skills
 
-  before_validation :email_from_account, if: proc { email.nil? }
+  # before_validation :email_from_account, if: proc { email.nil? }
 
   validates :first_name, :email, presence: true
   validates :email, uniqueness: { case_sensitive: false, scope: :account }

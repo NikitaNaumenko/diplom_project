@@ -2,6 +2,7 @@
 
 module Web
   class AccountsController < ApplicationController
+    skip_before_action :check_current_user
     layout 'account'
 
     def new
@@ -12,14 +13,15 @@ module Web
     def create
       @account = Account.new(permitted_params)
       if @account.save
-        redirect_to users_path
+        render json: { redirect_path: users_path }.to_json
       else
         render 'new'
       end
     end
 
     def permitted_params
-      params.require(:account).permit(:name, :phone, :email, users_attributes: %i[first_name password password_confirmation])
+      params.require(:account).permit(:name, :email,
+                                      users_attributes: %i[first_name email password password_confirmation])
     end
   end
 end

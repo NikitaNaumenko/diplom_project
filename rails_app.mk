@@ -14,3 +14,6 @@ app-build:
 
 app-bash:
 	docker-compose run --user=$(USER) app bash
+
+app-console:
+	docker-compose run --user=$(USER) app bin/rails console

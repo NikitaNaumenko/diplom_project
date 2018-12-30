@@ -20,6 +20,7 @@ body {
   }
 }
 
+.account-page,
 .session-page {
   height: 100%;
 }

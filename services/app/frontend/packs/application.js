@@ -32,6 +32,7 @@ import UserForm from "../components/User/Form.vue";
 import SessionNew from "../components/Session/New.vue";
 import SettingsSkillsIndex from "../views/Settings/Skills/Index.vue";
 import SettingsSkillsNew from "../views/Settings/Skills/New.vue";
+import AccountNew from "../views/Account/New.vue";
 
 library.add(faCoffee);
 
@@ -52,6 +53,7 @@ Vue.component("user-form", UserForm);
 Vue.component("session-new", SessionNew);
 Vue.component("settings-skill-index", SettingsSkillsIndex);
 Vue.component("settings-skill-new", SettingsSkillsNew);
+Vue.component("account-new", AccountNew);
 
 const token = document
   .getElementsByName("csrf-token")[0]
