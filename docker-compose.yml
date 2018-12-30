@@ -1,0 +1,42 @@
+version: '3.5'
+
+services:
+  db:
+    #read_only: true
+    image: postgres
+    environment:
+      POSTGRES_USER: app
+    ports:
+      - '5432:5432'
+    # volumes:
+    #   - 'postgres:/var/lib/postgresql/data'
+  webpacker:
+    build:
+      context: services/app
+      dockerfile: Dockerfile.development
+    command: ./bin/webpack-dev-server --inline true
+    volumes:
+      - './services/app:/usr/src/app'
+    ports:
+      - '3035:3035'
+    env_file:
+      ".env"
+  app:
+    stdin_open: true
+    tty: true
+    build:
+      context: services/app
+      dockerfile: Dockerfile.development
+    command: sh -c "rm -f tmp/pids/server.pid && bin/rails s -b 0.0.0.0 -p3000"
+    ports:
+      - "3000:3000"
+    volumes: 
+      - "~/.bash_history:/root/.bash_history"
+      - "./services/app:/usr/src/app"
+      - "/tmp:/tmp"
+    depends_on:
+      - db
+      - webpacker
+    env_file:
+      ".env"
+

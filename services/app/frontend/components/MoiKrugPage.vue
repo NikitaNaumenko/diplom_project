@@ -1,0 +1,62 @@
+<template>
+  <vs-row>
+    <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="6">
+      <vs-button
+        v-if="isMoiKrugSettingExists"
+        color="success"
+        type="flat"
+        size="large"
+        icon-pack="fas"
+        icon="fa-plus-square"
+        @click="onClick"
+        >Authorize</vs-button
+      >
+      <vs-button
+        v-else
+        color="success"
+        type="flat"
+        size="large"
+        icon-pack="fas"
+        icon="fa-plus-square"
+        href="/moi_krugs/new"
+        >Create settings</vs-button
+      >
+    </vs-col>
+    <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="6">
+      <vs-button
+        v-if="isMoiKrugTokenExists"
+        color="success"
+        type="flat"
+        size="large"
+        icon-pack="fas"
+        icon="fa-exchange-alt"
+        @click="onPing"
+        >Ping</vs-button
+      >
+    </vs-col>
+  </vs-row>
+</template>
+<script>
+import axios from "axios";
+
+export default {
+  props: {
+    isMoiKrugSettingExists: Boolean,
+    isMoiKrugTokenExists: Boolean
+  },
+  methods: {
+    onClick() {
+      const { hostname } = window.location;
+      axios
+        .post(`http://${hostname}:5000/moi_krugs/auth_urls`)
+        .then(response => {
+          const { uri } = response.data;
+          window.open(uri);
+        });
+    },
+    onPing() {
+      axios.get("/moi_krugs/pings");
+    }
+  }
+};
+</script>
