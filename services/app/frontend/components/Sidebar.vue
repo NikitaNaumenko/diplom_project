@@ -12,17 +12,7 @@ export default {
           icon: "fas fa-user-circle",
           href: "/users/"
         },
-        {
-          title: this.$t("sidebar.integrations.title"),
-          icon: "fa fa-hammer",
-          child: [
-            {
-              href: "/moi_krugs",
-              icon: "fa fa-users",
-              title: this.$t("sidebar.integrations.moi_krug")
-            }
-          ]
-        },
+
         {
           title: this.$t("sidebar.users.title"),
           icon: "fas fa-users",
@@ -47,6 +37,17 @@ export default {
               href: "/settings/skills",
               icon: "far fa-list-alt",
               title: this.$t("sidebar.settings.skills")
+            },
+            {
+              title: this.$t("sidebar.integrations.title"),
+              icon: "fa fa-hammer",
+              child: [
+                {
+                  href: "/settings/integrations/moi_krugs",
+                  icon: "fa fa-users",
+                  title: this.$t("sidebar.integrations.moi_krug")
+                }
+              ]
             }
           ]
         },

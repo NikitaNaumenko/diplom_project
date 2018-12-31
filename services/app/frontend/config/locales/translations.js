@@ -1,7 +1,10 @@
 export default {
   ru: {
     buttons: {
-      create: "Создать"
+      create: "Создать",
+      authorization: "Авторизация",
+      createIntegrationSettings: "Задать настройки интеграции",
+      ping: "Проверка подключения"
     },
     account: {
       form: {
@@ -45,6 +48,15 @@ export default {
       }
     },
     settings: {
+      integrations: {
+        moiKrug: {
+          form: {
+            title: "Создать настройки интеграции с МойКруг",
+            clientID: "Client ID",
+            clientSecret: "Client Secret"
+          }
+        }
+      },
       skills: {
         table: {
           title: "Навыки",

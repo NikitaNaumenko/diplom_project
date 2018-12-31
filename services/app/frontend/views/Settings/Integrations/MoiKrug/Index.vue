@@ -3,35 +3,35 @@
     <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="6">
       <vs-button
         v-if="isMoiKrugSettingExists"
-        color="success"
+        color="rgb(11, 189, 135)"
         type="flat"
         size="large"
         icon-pack="fas"
-        icon="fa-plus-square"
+        icon="fa-plus-circle"
         @click="onClick"
-        >Authorize</vs-button
+        >{{ this.$t("buttons.authorization") }}</vs-button
       >
       <vs-button
         v-else
-        color="success"
+        color="rgb(11, 189, 135)"
         type="flat"
         size="large"
         icon-pack="fas"
-        icon="fa-plus-square"
-        href="/moi_krugs/new"
-        >Create settings</vs-button
+        icon="fa-plus-circle"
+        href="/settings/integrations/moi_krugs/new"
+        >{{ this.$t("buttons.createIntegrationSettings") }}</vs-button
       >
     </vs-col>
     <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="6">
       <vs-button
         v-if="isMoiKrugTokenExists"
-        color="success"
+        color="rgb(11, 189, 135)"
         type="flat"
         size="large"
         icon-pack="fas"
         icon="fa-exchange-alt"
         @click="onPing"
-        >Ping</vs-button
+        >{{ this.$t("buttons.ping") }}</vs-button
       >
     </vs-col>
   </vs-row>

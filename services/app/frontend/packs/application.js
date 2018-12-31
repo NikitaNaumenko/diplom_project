@@ -23,16 +23,16 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import VueI18n from "vue-i18n";
 import translations from "../config/locales/translations";
 
-import MoiKrugPage from "../components/MoiKrugPage.vue";
 import Sidebar from "../components/Sidebar.vue";
-import MoiKrugForm from "../components/MoiKrugForm.vue";
-import UsersPage from "../components/User/Index.vue";
+import UsersIndex from "../views/Users/Index.vue";
 import UserPage from "../components/User/Show.vue";
 import UserForm from "../components/User/Form.vue";
 import SessionNew from "../components/Session/New.vue";
 import SettingsSkillsIndex from "../views/Settings/Skills/Index.vue";
 import SettingsSkillsNew from "../views/Settings/Skills/New.vue";
 import AccountNew from "../views/Account/New.vue";
+import SettingsIntegrationsMoiKrugIndex from "../views/Settings/Integrations/MoiKrug/Index.vue";
+import SettingsIntegrationsMoiKrugNew from "../views/Settings/Integrations/MoiKrug/New.vue";
 
 library.add(faCoffee);
 
@@ -45,9 +45,15 @@ Vue.use(VueResource);
 Vue.use(VueSidebarMenu);
 
 Vue.component("sidebar", Sidebar);
-Vue.component("moi-krug-page", MoiKrugPage);
-Vue.component("moi-krug-form", MoiKrugForm);
-Vue.component("users-page", UsersPage);
+Vue.component(
+  "settings-integrations-moi-krug-index",
+  SettingsIntegrationsMoiKrugIndex
+);
+Vue.component(
+  "settings-integrations-moi-krug-new",
+  SettingsIntegrationsMoiKrugNew
+);
+Vue.component("users-index", UsersIndex);
 Vue.component("user-page", UserPage);
 Vue.component("user-form", UserForm);
 Vue.component("session-new", SessionNew);

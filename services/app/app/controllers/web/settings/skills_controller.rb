@@ -2,7 +2,7 @@
 
 module Web
   module Settings
-    class SkillsController < ApplicationController
+    class SkillsController < ::Web::Settings::ApplicationController
       def index
         @skills = account.skills
         respond_to do |format|
