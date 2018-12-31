@@ -12,6 +12,21 @@ export default {
         password: "Пароль"
       }
     },
+    users: {
+      table: {
+        title: "Сотрудники",
+        id: "№",
+        firstName: "Имя",
+        lastName: "Фамилия",
+        email: "Email"
+      },
+      form: {
+        title: "Добавить нового сотрудника",
+        firstName: "Имя",
+        lastName: "Фамилия",
+        email: "Email"
+      }
+    },
     sidebar: {
       my_information: "Моя информация",
       logout: "Выход",
@@ -21,7 +36,8 @@ export default {
       },
       users: {
         title: "Сотрудники",
-        list: "Список сотрудников"
+        list: "Список сотрудников",
+        newUser: "Добавить нового сотрудника"
       },
       settings: {
         title: "Настройки",

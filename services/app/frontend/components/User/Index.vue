@@ -2,16 +2,18 @@
   <div>
     <vs-table :data="users">
       <template slot="header">
-        <div class="table-header"><h3>Users</h3></div>
+        <div class="table-header">
+          <h3>{{ $t("users.table.title") }}</h3>
+        </div>
       </template>
       <template slot="thead">
-        <vs-th> {{ $t("message.hello") }}</vs-th>
+        <vs-th>{{ $t("users.table.id") }}</vs-th>
 
-        <vs-th> First Name </vs-th>
+        <vs-th>{{ $t("users.table.firstName") }}</vs-th>
 
-        <vs-th> Last Name </vs-th>
+        <vs-th>{{ $t("users.table.lastName") }}</vs-th>
 
-        <vs-th> Email </vs-th>
+        <vs-th>{{ $t("users.table.email") }}</vs-th>
       </template>
 
       <template slot-scope="{ data }">

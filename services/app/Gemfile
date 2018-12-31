@@ -24,7 +24,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'kruger', '~> 0.1.1'
 gem 'ledermann-rails-settings'
 gem 'pundit'
-gem 'simple_form'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

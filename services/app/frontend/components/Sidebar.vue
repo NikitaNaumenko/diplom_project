@@ -35,7 +35,7 @@ export default {
             {
               href: "/users/new",
               icon: "fas fa-user-plus",
-              title: "Add new user"
+              title: this.$t("sidebar.users.newUser")
             }
           ]
         },

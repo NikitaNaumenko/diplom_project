@@ -5,10 +5,7 @@ module Web
     skip_before_action :check_current_user
     layout 'account'
 
-    def new
-      @account = Account.new
-      @account.users.build
-    end
+    def new; end
 
     def create
       @account = Account.new(permitted_params)

@@ -20,6 +20,7 @@
       />
       <vs-input
         v-model="password"
+        type="password"
         :label-placeholder="this.$t('account.form.password')"
         color="rgb(11, 189, 135)"
       />

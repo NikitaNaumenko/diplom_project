@@ -1,2 +1,2 @@
 include frontend.mk
-include rails_app.mk
+include app-development.mk
