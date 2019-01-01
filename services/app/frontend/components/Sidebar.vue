@@ -34,9 +34,20 @@ export default {
           icon: "fas fa-cogs",
           child: [
             {
-              href: "/settings/skills",
               icon: "far fa-list-alt",
-              title: this.$t("sidebar.settings.skills")
+              title: this.$t("sidebar.settings.catalogs.title"),
+              child: [
+                {
+                  icon: "fas fa-screwdriver",
+                  title: this.$t("sidebar.settings.catalogs.skills"),
+                  href: "/settings/catalogs/skills"
+                },
+                {
+                  icon: "fas fa-graduation-cap",
+                  title: this.$t("sidebar.settings.catalogs.educations"),
+                  href: "/settings/catalogs/educations"
+                }
+              ]
             },
             {
               title: this.$t("sidebar.integrations.title"),

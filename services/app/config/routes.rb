@@ -10,7 +10,10 @@ Rails.application.routes.draw do
     resources :accounts, only: %i[new create]
     resources :users
     namespace :settings do
-      resources :skills
+      namespace :catalogs do
+        resources :skills
+        resources :educations
+      end
 
       namespace :integrations do
         resources :moi_krugs, except: :show

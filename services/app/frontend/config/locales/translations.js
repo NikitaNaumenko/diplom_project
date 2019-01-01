@@ -44,7 +44,10 @@ export default {
       },
       settings: {
         title: "Настройки",
-        skills: "Навыки"
+        catalogs: {
+          title: "Справочники",
+          skills: "Навыки"
+        }
       }
     },
     settings: {
@@ -67,6 +70,21 @@ export default {
         },
         form: {
           title: "Добавить навык",
+          code: "Код",
+          name: "Название",
+          description: "Описание"
+        }
+      },
+      educations: {
+        table: {
+          title: "Виды образования",
+          id: "№",
+          code: "Код",
+          name: "Название",
+          description: "Описание"
+        },
+        form: {
+          title: "Добавить вид образования",
           code: "Код",
           name: "Название",
           description: "Описание"

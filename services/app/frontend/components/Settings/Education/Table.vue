@@ -1,10 +1,10 @@
 <template lang="html">
   <div>
-    <vs-table :data="skills">
+    <vs-table :data="educations">
       <template slot="header">
         <div class="table-header">
           <h3 class="table-header--name">
-            {{ this.$t("settings.skills.table.title") }}
+            {{ this.$t("settings.educations.table.title") }}
           </h3>
 
           <vs-button
@@ -19,13 +19,13 @@
         </div>
       </template>
       <template slot="thead">
-        <vs-th>{{ this.$t("settings.skills.table.id") }}</vs-th>
+        <vs-th>{{ this.$t("settings.educations.table.id") }}</vs-th>
 
-        <vs-th>{{ this.$t("settings.skills.table.code") }}</vs-th>
+        <vs-th>{{ this.$t("settings.educations.table.code") }}</vs-th>
 
-        <vs-th>{{ this.$t("settings.skills.table.name") }}</vs-th>
+        <vs-th>{{ this.$t("settings.educations.table.name") }}</vs-th>
 
-        <vs-th>{{ this.$t("settings.skills.table.description") }}</vs-th>
+        <vs-th>{{ this.$t("settings.educations.table.description") }}</vs-th>
         <vs-th></vs-th>
       </template>
 
@@ -55,13 +55,13 @@ export default {
     skills: []
   }),
   created() {
-    axios.get("/settings/catalogs/skills").then(response => {
-      this.skills = response.data.skills;
+    axios.get("/settings/catalogs/educations").then(response => {
+      this.educations = response.data.educations;
     });
   },
   methods: {
     newLink() {
-      return `/settings/catalogs/skills/new`;
+      return `/settings/catalogs/educations/new`;
     }
   }
 };

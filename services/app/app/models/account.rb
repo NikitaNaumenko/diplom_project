@@ -8,10 +8,11 @@ class Account < ApplicationRecord
     }
   end
 
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
 
   has_many :users, dependent: :destroy
   has_many :skills, dependent: :destroy
+  has_many :educations, dependent: :destroy
   has_one :moi_krug_token, class_name: Token::MoiKrug.name, dependent: :destroy
 
   before_save { self.email = email.downcase }

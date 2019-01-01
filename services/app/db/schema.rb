@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_04_142214) do
+ActiveRecord::Schema.define(version: 2019_01_01_103940) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,18 @@ ActiveRecord::Schema.define(version: 2018_12_04_142214) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_accounts_on_email"
     t.index ["name"], name: "index_accounts_on_name"
+  end
+
+  create_table "educations", force: :cascade do |t|
+    t.string "name"
+    t.string "code"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "account_id"
+    t.index ["account_id", "code"], name: "index_educations_on_account_id_and_code"
+    t.index ["account_id"], name: "index_educations_on_account_id"
+    t.index ["code"], name: "index_educations_on_code"
   end
 
   create_table "settings", force: :cascade do |t|
@@ -59,6 +71,16 @@ ActiveRecord::Schema.define(version: 2018_12_04_142214) do
     t.index ["account_id"], name: "index_token_moi_krugs_on_account_id"
   end
 
+  create_table "user_educations", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "education_id"
+    t.index ["education_id"], name: "index_user_educations_on_education_id"
+    t.index ["user_id", "education_id"], name: "index_user_educations_on_user_id_and_education_id"
+    t.index ["user_id"], name: "index_user_educations_on_user_id"
+  end
+
   create_table "user_skills", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -80,8 +102,11 @@ ActiveRecord::Schema.define(version: 2018_12_04_142214) do
     t.index ["account_id"], name: "index_users_on_account_id"
   end
 
+  add_foreign_key "educations", "accounts"
   add_foreign_key "skills", "accounts"
   add_foreign_key "token_moi_krugs", "accounts"
+  add_foreign_key "user_educations", "educations"
+  add_foreign_key "user_educations", "users"
   add_foreign_key "user_skills", "skills"
   add_foreign_key "user_skills", "users"
   add_foreign_key "users", "accounts"

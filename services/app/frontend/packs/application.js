@@ -28,11 +28,13 @@ import UsersIndex from "../views/Users/Index.vue";
 import UserPage from "../components/User/Show.vue";
 import UserForm from "../components/User/Form.vue";
 import SessionNew from "../components/Session/New.vue";
-import SettingsSkillsIndex from "../views/Settings/Skills/Index.vue";
-import SettingsSkillsNew from "../views/Settings/Skills/New.vue";
 import AccountNew from "../views/Account/New.vue";
 import SettingsIntegrationsMoiKrugIndex from "../views/Settings/Integrations/MoiKrug/Index.vue";
 import SettingsIntegrationsMoiKrugNew from "../views/Settings/Integrations/MoiKrug/New.vue";
+import SettingsCatalogsSkillsIndex from "../views/Settings/Catalogs/Skills/Index.vue";
+import SettingsCatalogsSkillsNew from "../views/Settings/Catalogs/Skills/New.vue";
+import SettingsCatalogsEducationsIndex from "../views/Settings/Catalogs/Educations/Index.vue";
+import SettingsCatalogsEducationsNew from "../views/Settings/Catalogs/Educations/New.vue";
 
 library.add(faCoffee);
 
@@ -57,9 +59,14 @@ Vue.component("users-index", UsersIndex);
 Vue.component("user-page", UserPage);
 Vue.component("user-form", UserForm);
 Vue.component("session-new", SessionNew);
-Vue.component("settings-skill-index", SettingsSkillsIndex);
-Vue.component("settings-skill-new", SettingsSkillsNew);
 Vue.component("account-new", AccountNew);
+Vue.component("settings-catalogs-skill-index", SettingsCatalogsSkillsIndex);
+Vue.component("settings-catalogs-skill-new", SettingsCatalogsSkillsNew);
+Vue.component(
+  "settings-catalogs-educations-index",
+  SettingsCatalogsEducationsIndex
+);
+Vue.component("settings-catalogs-education-new", SettingsCatalogsEducationsNew);
 
 const token = document
   .getElementsByName("csrf-token")[0]

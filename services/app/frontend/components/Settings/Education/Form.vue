@@ -1,20 +1,20 @@
 <template>
-  <form @submit.prevent="onSubmit" class="skills-form">
-    <div>{{ this.$t("settings.skills.form.title") }}</div>
+  <form @submit.prevent="onSubmit" class="educations-form">
+    <div>{{ this.$t("settings.educations.form.title") }}</div>
     <div class="centerx labelx">
       <vs-input
         v-model="code"
-        :label-placeholder="this.$t('settings.skills.form.code')"
+        :label-placeholder="this.$t('settings.educations.form.code')"
         color="rgb(11, 189, 135)"
       />
       <vs-input
         v-model="name"
-        :label-placeholder="this.$t('settings.skills.form.name')"
+        :label-placeholder="this.$t('settings.educations.form.name')"
         color="rgb(11, 189, 135)"
       />
       <vs-input
         v-model="description"
-        :label-placeholder="this.$t('settings.skills.form.description')"
+        :label-placeholder="this.$t('settings.educations.form.description')"
         color="rgb(11, 189, 135)"
       />
     </div>
@@ -60,7 +60,7 @@ export default {
 .vs-input {
   margin-bottom: 10px;
 }
-.skills-form {
+.educations-form {
   display: flex;
   flex-direction: column;
   align-items: center;
