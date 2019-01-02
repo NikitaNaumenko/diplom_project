@@ -26,3 +26,5 @@ app-generate-controller:
 	docker-compose run --user=$(USER) app bin/rails generate controller $(name)
 app-migrate:
 	docker-compose run --user=$(USER) app bin/rails db:migrate
+app-test:
+	docker-compose run --user=$(USER) app bin/rails test test/

@@ -1,12 +1,8 @@
 AllCops:
-  TargetRubyVersion: 2.5.1
+  TargetRubyVersion: 2.5.3
   TargetRailsVersion: 5.2
   DisplayCopNames: true
   ExtraDetails: true
-  Include:
-    - '**/*.jbuilder'
-    - '**/*.rake'
-    - '**/Gemfile'
   Exclude:
     - 'db/schema.rb'
 
@@ -38,6 +34,7 @@ Style/Documentation:
     - 'app/controllers/**/*'
     - 'app/models/**/*'
     - 'app/helpers/**/*'
+    - 'test/*'
     - 'db/migrate/*'
 
 Layout/MultilineMethodCallIndentation:
@@ -45,3 +42,4 @@ Layout/MultilineMethodCallIndentation:
 
 Style/DotPosition:
   EnforcedStyle: trailing
+
