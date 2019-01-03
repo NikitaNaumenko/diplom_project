@@ -34,7 +34,7 @@ Style/Documentation:
     - 'app/controllers/**/*'
     - 'app/models/**/*'
     - 'app/helpers/**/*'
-    - 'test/*'
+    - 'test/**/*'
     - 'db/migrate/*'
 
 Layout/MultilineMethodCallIndentation:
