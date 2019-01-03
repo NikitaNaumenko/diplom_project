@@ -1,10 +1,12 @@
-# rails-webpacker-docker-vagrant-example
+# Personas - my final qualification task
 
-# First step
-  Build docker image from [Dockerfile](https://github.com/NikitaNaumenko/docker_images/blob/master/rails/Dockerfile)
+### Requirements
+  * Mac / Linux
+  * Docker
+  * Docker Compose
 
-  ```
-    docker build . # or -f PATH/Dockergfile
-    docker login # if not login
-    docker push naumenkonikita/rails # your docker registry
-  ```
+### Install
+
+```sh
+$ make compose-setup
+```
