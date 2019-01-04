@@ -12,7 +12,7 @@ module Web
       if @account.save
         render json: { redirect_path: users_path }.to_json
       else
-        render 'new'
+        render json: { redirect_path: new_account_path, errors: @account.errors.full_messages }
       end
     end
 
