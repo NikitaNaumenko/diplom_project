@@ -14,6 +14,5 @@ module Web
     def check_current_user
       return redirect_to login_path unless current_user
     end
-
   end
 end

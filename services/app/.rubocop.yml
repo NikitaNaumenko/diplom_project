@@ -15,19 +15,19 @@ Metrics/LineLength:
 Metrics/MethodLength:
   Max: 20
   Exclude:
-    - 'spec/**/*'
+    - 'test/**/*'
 
 Metrics/BlockLength:
   Max: 20
   Exclude:
-    - 'spec/**/*'
+    - 'test/**/*'
 
 Metrics/AbcSize:
   Max: 20
 
 Lint/AmbiguousBlockAssociation:
   Exclude:
-    - "spec/**/*"
+    - "test/**/*"
 
 Style/Documentation:
   Exclude:
