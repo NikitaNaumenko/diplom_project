@@ -4,3 +4,10 @@ first_user:
   email: 'user@mail.ru'
   account: first_account
   password_digest: <%= BCrypt::Password.create('1234') %>
+
+second_user:
+  first_name: 'firstNameSecondUser'
+  last_name: 'lastNameSecondUser'
+  email: 'second_user@mail.ru'
+  account: first_account
+  password_digest: <%= BCrypt::Password.create('1234') %>
