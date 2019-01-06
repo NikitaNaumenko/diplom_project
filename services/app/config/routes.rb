@@ -3,7 +3,7 @@
 Rails.application.routes.draw do
   scope module: :web do
     get 'login', to: 'sessions#new', as: 'login'
-    get 'logout', to: 'sessions#destroy', as: 'logout'
+    delete 'logout', to: 'sessions#destroy', as: 'logout'
     root 'users#index'
 
     resources :sessions, only: %i[new create destroy]
