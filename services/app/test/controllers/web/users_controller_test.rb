@@ -10,7 +10,7 @@ module Web
       @user_session = login(@user)
     end
 
-    def create_params
+    def params
       {
         first_name: 'newUser',
         last_name: 'newLastname',
@@ -40,18 +40,27 @@ module Web
 
     test 'should create user' do
       assert_difference('@account.users.count') do
-        @user_session.post users_url(params: { user: create_params }, subdomain: @account.name), as: :json
+        @user_session.post users_url(params: { user: params }, subdomain: @account.name), as: :json
       end
     end
 
     test 'should have right redirect path after create' do
-      @user_session.post users_url(params: { user: create_params }, subdomain: @account.name), as: :json
-      assert_equal "/users/#{@account.users.last.id}", JSON.parse(@user_session.response)['redirect_path']
+      @user_session.post users_url(params: { user: params }, subdomain: @account.name), as: :json
+      assert_equal "/users/#{@account.users.last.id}",
+                   JSON.parse(@user_session.response.body)['redirect_path']
     end
 
     test 'should response have edited user' do
       @user_session.get edit_user_url(subdomain: @account.name, id: users(:second_user).id), as: :json
-      assert_equal JSON.parse(@user_session.response.body)['user'], JSON.parse(users(:second_user).to_json)
+      assert_equal JSON.parse(@user_session.response.body)['user'],
+                   JSON.parse(users(:second_user).to_json)
+    end
+
+    test 'should response have right redirect path after update' do
+      @user_session.patch user_url(id: users(:second_user).id, params: { user: params },
+                                   subdomain: @account.name), as: :json
+      assert_equal "/users/#{users(:second_user).id}",
+                   JSON.parse(@user_session.response.body)['redirect_path']
     end
   end
 end

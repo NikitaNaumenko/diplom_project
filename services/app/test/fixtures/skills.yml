@@ -1,0 +1,11 @@
+sql:
+  name: 'sql'
+  code: 'sql'
+  description: 'Description sql'
+  account: first_account
+
+ruby:
+  name: 'ruby'
+  code: 'ruby'
+  description: 'Description ruby'
+  account: first_account

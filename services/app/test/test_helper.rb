@@ -18,6 +18,7 @@ module ActionDispatch
       open_session do |sess|
         sess.https!
         sess.post sessions_url(params: { email: user.email, password: '1234' }, subdomain: user.account.name)
+        assert_equal '/', JSON.parse(sess.response.body)['redirect_path']
         sess.https!(false)
       end
     end
