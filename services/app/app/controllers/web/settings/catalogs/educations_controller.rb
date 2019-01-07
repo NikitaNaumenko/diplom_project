@@ -9,7 +9,7 @@ module Web
           respond_to do |format|
             format.html
             format.json do
-              render json: { skills: @skills }.to_json
+              render json: { educations: @educations }.to_json
             end
           end
         end
@@ -21,7 +21,7 @@ module Web
           if education.save
             render json: { redirect_path: settings_catalogs_educations_path }.to_json
           else
-            render json: { redirect_path: settings_catalogs_new_education_path,
+            render json: { redirect_path: new_settings_catalogs_education_path,
                            errors: education.errors.full_messages.first }.to_json
           end
         end

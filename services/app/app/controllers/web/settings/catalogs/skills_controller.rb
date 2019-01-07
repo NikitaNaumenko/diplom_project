@@ -21,8 +21,8 @@ module Web
           if skill.save
             render json: { redirect_path: settings_catalogs_skills_path }.to_json
           else
-            render json: { redirect_path: settings_catalogs_new_skill_path,
-                           error: skill.errors.full_messages.first }.to_json
+            render json: { redirect_path: new_settings_catalogs_skill_path,
+                           errors: skill.errors.full_messages.first }.to_json
           end
         end
 

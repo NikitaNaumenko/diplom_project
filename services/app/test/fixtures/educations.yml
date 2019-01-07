@@ -1,0 +1,11 @@
+bachelor:
+  code: 'bachelor'
+  name: 'bachelor'
+  description: 'bachelor description'
+  account: first_account
+
+magistry:
+  code: 'magistry'
+  name: 'magistry'
+  description: 'magistry description'
+  account: first_account
