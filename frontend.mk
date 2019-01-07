@@ -11,3 +11,9 @@ yarn-install:
 
 yarn-install-dev:
 	docker-compose run --user=$(USER) app yarn add -D $(PACKAGE_NAME)
+
+yarn-upgrade:
+	docker-compose run app yarn upgrade vuesax
+
+yarn-remove:
+	docker-compose run app yarn remove react react-dom pug pug-loader prop-types babel-preset-react

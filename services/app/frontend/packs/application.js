@@ -25,7 +25,7 @@ import translations from "../config/locales/translations";
 
 import Sidebar from "../components/Sidebar.vue";
 import UsersIndex from "../views/Users/Index.vue";
-import UserPage from "../components/User/Show.vue";
+import UsersShow from "../views/Users/Show.vue";
 import UserForm from "../components/User/Form.vue";
 import SessionNew from "../components/Session/New.vue";
 import AccountNew from "../views/Account/New.vue";
@@ -56,7 +56,6 @@ Vue.component(
   SettingsIntegrationsMoiKrugNew
 );
 Vue.component("users-index", UsersIndex);
-Vue.component("user-page", UserPage);
 Vue.component("user-form", UserForm);
 Vue.component("session-new", SessionNew);
 Vue.component("account-new", AccountNew);
@@ -67,6 +66,7 @@ Vue.component(
   SettingsCatalogsEducationsIndex
 );
 Vue.component("settings-catalogs-education-new", SettingsCatalogsEducationsNew);
+Vue.component("users-show", UsersShow);
 
 const token = document
   .getElementsByName("csrf-token")[0]
