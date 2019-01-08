@@ -7,3 +7,4 @@ tmp/
 yarn-debug.log*
 .yarn-integrity
 .byebug_history
+yarn-error.log

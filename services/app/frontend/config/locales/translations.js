@@ -23,6 +23,19 @@ export default {
         lastName: "Фамилия",
         email: "Email"
       },
+      card: {
+        general: {
+          title: "Общее",
+          workInfo: "Рабочая информация",
+          familyInfo: "Личная информация"
+        },
+        workInfo: {
+          title: "Рабочая информация"
+        },
+        familyInfo: {
+          title: "Личная информация"
+        }
+      },
       form: {
         title: "Добавить нового сотрудника",
         firstName: "Имя",

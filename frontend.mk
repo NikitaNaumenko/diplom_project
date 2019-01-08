@@ -16,4 +16,4 @@ yarn-upgrade:
 	docker-compose run app yarn upgrade vuesax --latest
 
 yarn-remove:
-	docker-compose run app yarn remove vue-form-generator vuesax
+	docker-compose run app yarn remove vue-sidebar-menu
