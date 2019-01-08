@@ -14,8 +14,8 @@ class User < ApplicationRecord
   before_validation :email_from_account, if: proc { email.nil? }
   before_save { self.email = email.downcase }
 
-  validates :first_name, :email, :password, presence: true
-  validates :password, length: { minimum: 4 }
+  validates :first_name, :email, presence: true
+  validates :password, presence: { on: :create }, length: { minimum: 4, allow_blank: true }
   validates :email, uniqueness: { case_sensitive: false, scope: :account }
   validates :email, length: { maximum: 255 }
   validates :email, format: { with: VALID_EMAIL_REGEX }

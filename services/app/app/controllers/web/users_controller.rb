@@ -44,8 +44,11 @@ module Web
     def update
       respond_to do |format|
         format.json do
-          user.update(permitted_params)
-          render json: { redirect_path: user_path(user) }.to_json
+          if user.update(permitted_params)
+            render json: { redirect_path: user_path(user) }.to_json
+          else
+            render json: { redirect_path: edit_user_path(user), errors: user.errors.full_messages }.to_json
+          end
         end
       end
     end
