@@ -11,9 +11,9 @@ import Vue from "vue/dist/vue.esm";
 import VueResource from "vue-resource";
 import VueSidebarMenu from "vue-sidebar-menu";
 import Vuesax from "vuesax";
-import VueFormGenerator from "vue-form-generator";
 import axios from "axios";
 import "vuesax/dist/vuesax.css";
+import "vue-sidebar-menu/dist/vue-sidebar-menu.css";
 
 import "./application.css";
 
@@ -25,7 +25,7 @@ import translations from "../config/locales/translations";
 
 import Sidebar from "../components/Sidebar.vue";
 import UsersIndex from "../views/Users/Index.vue";
-import UserPage from "../components/User/Show.vue";
+import UsersShow from "../views/Users/Show.vue";
 import UserForm from "../components/User/Form.vue";
 import SessionNew from "../components/Session/New.vue";
 import AccountNew from "../views/Account/New.vue";
@@ -41,7 +41,6 @@ library.add(faCoffee);
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 Vue.use(Vuesax);
-Vue.use(VueFormGenerator);
 Vue.use(VueI18n);
 Vue.use(VueResource);
 Vue.use(VueSidebarMenu);
@@ -56,7 +55,6 @@ Vue.component(
   SettingsIntegrationsMoiKrugNew
 );
 Vue.component("users-index", UsersIndex);
-Vue.component("user-page", UserPage);
 Vue.component("user-form", UserForm);
 Vue.component("session-new", SessionNew);
 Vue.component("account-new", AccountNew);
@@ -67,6 +65,7 @@ Vue.component(
   SettingsCatalogsEducationsIndex
 );
 Vue.component("settings-catalogs-education-new", SettingsCatalogsEducationsNew);
+Vue.component("users-show", UsersShow);
 
 const token = document
   .getElementsByName("csrf-token")[0]

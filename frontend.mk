@@ -7,7 +7,13 @@ install-react:
 	docker-compose run --user=$(USER) app bin/rails webpacker:install:react
 
 yarn-install:
-	docker-compose run --user=$(USER) app yarn add $(PACKAGE_NAME)
+	docker-compose run app yarn add $(PACKAGE_NAME)
 
 yarn-install-dev:
-	docker-compose run --user=$(USER) app yarn add -D $(PACKAGE_NAME)
+	docker-compose run app yarn add -D @babel/cli @babel/core @babel/preset-env
+
+yarn-upgrade:
+	docker-compose run app yarn upgrade vuesax --latest
+
+yarn-remove:
+	docker-compose run app yarn remove vue-form-generator vuesax
