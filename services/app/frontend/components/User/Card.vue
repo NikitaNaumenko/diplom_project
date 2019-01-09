@@ -25,13 +25,13 @@
     <vs-row>
       <vs-tabs vs-position="left" color="rgb(11, 189, 135)">
         <vs-tab :vs-label="this.$t('users.card.general.title')">
-          <div></div>
+          <general-info></general-info>
         </vs-tab>
         <vs-tab :vs-label="this.$t('users.card.workInfo.title')">
-          <div></div>
+          <work-info></work-info>
         </vs-tab>
         <vs-tab :vs-label="this.$t('users.card.familyInfo.title')">
-          <div></div>
+          <family-info></family-info>
         </vs-tab>
       </vs-tabs>
     </vs-row>
@@ -40,11 +40,19 @@
 
 <script>
 import axios from "axios";
+import GeneralInfo from "./GeneralInfo.vue";
+import FamilyInfo from "./FamilyInfo.vue";
+import WorkInfo from "./WorkInfo.vue";
 
 export default {
   data: () => ({
     user: {}
   }),
+  components: {
+    GeneralInfo,
+    FamilyInfo,
+    WorkInfo
+  },
   created() {
     axios.get(window.location.pathname).then(response => {
       this.user = response.data.user;
