@@ -63,4 +63,13 @@ class UserTest < ActiveSupport::TestCase
     @user.save
     assert_equal mixed_case_email.downcase, @user.reload.email
   end
+
+  test 'doesnt_work state should be transition to works state' do
+    assert_transitions_from @user, :doesnt_work, to: :works, on_event: :recruitment
+  end
+
+  test 'works state should be transition to doenst_work state' do
+    @user.recruitment!
+    assert_transitions_from @user, :works, to: :doesnt_work, on_event: :dismiss
+  end
 end
