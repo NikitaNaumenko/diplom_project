@@ -31,7 +31,7 @@
           <work-info></work-info>
         </vs-tab>
         <vs-tab :vs-label="this.$t('users.card.familyInfo.title')">
-          <family-info></family-info>
+          <personal-info v-bind:userAttributes="user"></personal-info>
         </vs-tab>
       </vs-tabs>
     </vs-row>
@@ -41,7 +41,7 @@
 <script>
 import axios from "axios";
 import GeneralInfo from "./GeneralInfo.vue";
-import FamilyInfo from "./FamilyInfo.vue";
+import PersonalInfo from "./PersonalInfo.vue";
 import WorkInfo from "./WorkInfo.vue";
 
 export default {
@@ -50,12 +50,12 @@ export default {
   }),
   components: {
     GeneralInfo,
-    FamilyInfo,
+    PersonalInfo,
     WorkInfo
   },
   created() {
     axios.get(window.location.pathname).then(response => {
-      this.user = response.data.user;
+      this.user = response.data.data.attributes;
     });
   },
   methods: {

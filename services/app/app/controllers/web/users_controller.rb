@@ -13,10 +13,11 @@ module Web
     end
 
     def show
+      @user = ::UsersSerializer.new(user).serialized_json
       respond_to do |format|
         format.html
         format.json do
-          render json: { user: user }.to_json
+          render json: @user
         end
       end
     end
