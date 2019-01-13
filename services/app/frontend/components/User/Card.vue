@@ -4,7 +4,7 @@
       <vs-col vs-type="flex" vs-align="center" vs-w="9">
         <vs-avatar
           size="120px"
-          src="https://avatars2.githubusercontent.com/u/31676496?s=460&v=4"
+          src="https://pp.userapi.com/c840533/v840533023/600dc/7LYQ3Qd0Tl0.jpg"
         />
 
         <div class="user-card--badge">

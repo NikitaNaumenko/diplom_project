@@ -1,7 +1,7 @@
 <template>
   <form>
     <vs-row>
-      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="3">
+      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="2">
         <vs-input
           :label="this.$t('users.card.personalInfo.firstName')"
           :placeholder="user.firstName"
@@ -9,7 +9,7 @@
           v-model="user.firstName"
         />
       </vs-col>
-      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="3">
+      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="2">
         <vs-input
           :label="this.$t('users.card.personalInfo.lastName')"
           :placeholder="user.lastName"
@@ -17,7 +17,7 @@
           v-model="user.lastName"
         />
       </vs-col>
-      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="3">
+      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="2">
         <vs-input
           :label="this.$t('users.card.personalInfo.patronymic')"
           :placeholder="user.patronymic"
@@ -25,7 +25,7 @@
           v-model="user.patronymic"
         />
       </vs-col>
-      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="3">
+      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="2">
         <vs-input
           :label="this.$t('users.card.personalInfo.birthdate')"
           :placeholder="user.birthdate"
@@ -33,15 +33,14 @@
           v-model="user.birthdate"
         />
       </vs-col>
-    </vs-row>
-    <vs-row>
-      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="4">
+
+      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="2">
         <vs-select
           :label="this.$t('users.card.personalInfo.workState')"
           color="#0bbd87"
           v-model="user.workState"
           icon-pack="fas"
-          icon="fa-arrow-down"
+          icon="fa-angle-down"
         >
           <vs-select-item
             :key="index"
@@ -51,7 +50,7 @@
           />
         </vs-select>
       </vs-col>
-      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="4">
+      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="2">
         <vs-input
           :label="this.$t('users.card.personalInfo.employeeNumber')"
           :placeholder="user.employeeNumber"
@@ -59,6 +58,8 @@
           v-model="user.employeeNumber"
         />
       </vs-col>
+    </vs-row>
+    <vs-row>
       <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="4">
         <vs-select
           class="selectExample"
@@ -66,7 +67,7 @@
           :label="this.$t('users.card.personalInfo.citizenship')"
           v-model="user.citizenship"
           icon-pack="fas"
-          icon="fa-arrow-down"
+          icon="fa-angle-down"
         >
           <vs-select-item
             :key="index"
@@ -76,8 +77,6 @@
           />
         </vs-select>
       </vs-col>
-    </vs-row>
-    <vs-row>
       <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="4">
         <vs-input
           :label="this.$t('users.card.personalInfo.birthplace')"
@@ -86,14 +85,14 @@
           v-model="user.birthplace"
         />
       </vs-col>
-      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="4">
+      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="2">
         <vs-select
           class="selectExample"
           color="#0bbd87"
           :label="this.$t('users.card.personalInfo.gender')"
           v-model="user.gender"
           icon-pack="fas"
-          icon="fa-arrow-down"
+          icon="fa-angle-down"
         >
           <vs-select-item
             :key="index"
@@ -103,14 +102,14 @@
           />
         </vs-select>
       </vs-col>
-      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="4">
+      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="2">
         <vs-select
           class="selectExample"
           color="#0bbd87"
           :label="this.$t('users.card.personalInfo.maritalStatus')"
           v-model="user.maritalStatus"
           icon-pack="fas"
-          icon="fa-arrow-down"
+          icon="fa-angle-down"
         >
           <vs-select-item
             :key="index"
@@ -175,3 +174,28 @@ export default {
   }
 };
 </script>
+<style>
+.con-select {
+  margin-bottom: 10px;
+  width: 100%;
+}
+.vs-input {
+  width: 100%;
+}
+.vs-input--input {
+  border-radius: 0px;
+  border: 0px !important;
+}
+.vs-select--input {
+  border-radius: 0px;
+  padding: 6.5px;
+  border: 0px !important;
+}
+.vs-input--label,
+.vs-select--label {
+  font-size: 0.9rem;
+  display: block;
+  background-color: #0bbd87;
+  color: #ffffff;
+}
+</style>

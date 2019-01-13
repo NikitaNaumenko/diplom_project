@@ -1,5 +1,10 @@
 <template>
-  <sidebar-menu :menu="menu" :collapsed="collapsed" @collapse="onCollapse" />
+  <sidebar-menu
+    :menu="menu"
+    :collapsed="collapsed"
+    @collapse="onCollapse"
+    width="275px"
+  />
 </template>
 
 <script>
