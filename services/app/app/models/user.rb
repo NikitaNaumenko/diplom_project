@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  include AASM
+  extend Enumerize
+
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
 
   has_secure_password
@@ -19,6 +22,22 @@ class User < ApplicationRecord
   validates :email, uniqueness: { case_sensitive: false, scope: :account }
   validates :email, length: { maximum: 255 }
   validates :email, format: { with: VALID_EMAIL_REGEX }
+
+  enumerize :gender, in: %i[male female]
+  enumerize :marital_status, in: %i[widowed civil_marriage married divorced single]
+
+  aasm(column: :work_state) do
+    state :doesnt_work, initial: true
+    state :works
+
+    event :recruitment do
+      transitions from: :doesnt_work, to: :works
+    end
+
+    event :dismiss do
+      transitions from: :works, to: :doesnt_work
+    end
+  end
 
   private
 

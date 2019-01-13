@@ -1,3 +1,3 @@
 <template>
-  <div><p>Hui</p></div>
+  <div><p>info</p></div>
 </template>

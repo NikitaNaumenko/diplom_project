@@ -8,7 +8,7 @@
         />
 
         <div class="user-card--badge">
-          <h2>{{ `${user.first_name} ${user.last_name}` }}</h2>
+          <h2>{{ `${user.firstName} ${user.lastName}` }}</h2>
           <span class="user-card--badge__position"> Web developer </span>
         </div>
       </vs-col>
@@ -30,8 +30,8 @@
         <vs-tab :vs-label="this.$t('users.card.workInfo.title')">
           <work-info></work-info>
         </vs-tab>
-        <vs-tab :vs-label="this.$t('users.card.familyInfo.title')">
-          <family-info></family-info>
+        <vs-tab :vs-label="this.$t('users.card.personalInfo.title')">
+          <personal-info v-bind:userAttributes="user"></personal-info>
         </vs-tab>
       </vs-tabs>
     </vs-row>
@@ -40,8 +40,9 @@
 
 <script>
 import axios from "axios";
+import _ from "lodash";
 import GeneralInfo from "./GeneralInfo.vue";
-import FamilyInfo from "./FamilyInfo.vue";
+import PersonalInfo from "./PersonalInfo.vue";
 import WorkInfo from "./WorkInfo.vue";
 
 export default {
@@ -50,12 +51,21 @@ export default {
   }),
   components: {
     GeneralInfo,
-    FamilyInfo,
+    PersonalInfo,
     WorkInfo
   },
   created() {
     axios.get(window.location.pathname).then(response => {
-      this.user = response.data.user;
+      this.user = _.transform(
+        response.data.data.attributes,
+        (result, value, key) => {
+          const camelCaseKey = _.camelCase(key);
+          const resultObject = result;
+          resultObject[camelCaseKey] = value;
+          return result;
+        },
+        {}
+      );
     });
   },
   methods: {
@@ -70,6 +80,9 @@ export default {
 .vs-row {
   padding-bottom: 25px;
   margin-bottom: 25px;
+}
+>>> .con-slot-tabs {
+  width: 100%;
 }
 .user-card {
   &--badge {

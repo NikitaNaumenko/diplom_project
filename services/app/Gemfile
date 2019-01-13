@@ -17,6 +17,9 @@ gem 'webpacker', '>= 4.0.x'
 gem 'aasm'
 gem 'dry-monads'
 gem 'dry-validation'
+gem 'enumerize'
+gem 'fast_jsonapi'
+
 gem 'oauth2'
 
 gem 'interactor'

@@ -90,9 +90,13 @@ GEM
       dry-equalizer (~> 0.2)
       dry-logic (~> 0.4, >= 0.4.0)
       dry-types (~> 0.13.1)
+    enumerize (2.2.2)
+      activesupport (>= 3.2)
     erubi (1.7.1)
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
+    fast_jsonapi (1.5)
+      activesupport (>= 4.2)
     ffi (1.9.25)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -255,6 +259,8 @@ DEPENDENCIES
   dotenv-rails
   dry-monads
   dry-validation
+  enumerize
+  fast_jsonapi
   interactor
   jbuilder (~> 2.5)
   kruger (~> 0.1.1)

@@ -16,6 +16,23 @@ export default {
       }
     },
     users: {
+      attributes: {
+        workState: {
+          works: "Работает",
+          doesntWork: "Не работает"
+        },
+        gender: {
+          male: "Мужской",
+          female: "Женский"
+        },
+        maritalStatus: {
+          single: "Холост / Не замужем",
+          married: "Женат / Замужем",
+          divorced: "Разведен / Разведена",
+          widowed: "Вдовец / Вдова",
+          civilMarriage: "Гражданский брак"
+        }
+      },
       table: {
         title: "Сотрудники",
         id: "№",
@@ -32,8 +49,18 @@ export default {
         workInfo: {
           title: "Рабочая информация"
         },
-        familyInfo: {
-          title: "Личная информация"
+        personalInfo: {
+          title: "Личная информация",
+          firstName: "Имя",
+          lastName: "Фамилия",
+          patronymic: "Отчество",
+          birthdate: "Дата рождения",
+          workState: "Статус",
+          employeeNumber: "Табельный номер",
+          citizenship: "Гражданство",
+          birthplace: "Место рождения",
+          gender: "Пол",
+          maritalStatus: "Семейное положение"
         }
       },
       form: {
@@ -59,7 +86,8 @@ export default {
         title: "Настройки",
         catalogs: {
           title: "Справочники",
-          skills: "Навыки"
+          skills: "Навыки",
+          educations: "Образование"
         }
       }
     },

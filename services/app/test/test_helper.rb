@@ -2,6 +2,7 @@
 
 require File.expand_path('../config/environment', __dir__)
 require 'rails/test_help'
+require 'aasm/minitest'
 
 module ActiveSupport
   class TestCase
