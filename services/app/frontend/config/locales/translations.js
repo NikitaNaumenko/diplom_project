@@ -2,6 +2,7 @@ export default {
   ru: {
     buttons: {
       create: "Создать",
+      update: "Обновить",
       authorization: "Авторизация",
       createIntegrationSettings: "Задать настройки интеграции",
       ping: "Проверка подключения"
@@ -16,6 +17,10 @@ export default {
       }
     },
     users: {
+      update: {
+        success: "Пользователь успешно обновлен",
+        error: "При обновлении произошла ошибка"
+      },
       attributes: {
         workState: {
           works: "Работает",

@@ -46,9 +46,10 @@ module Web
       respond_to do |format|
         format.json do
           if user.update(permitted_params)
-            render json: { redirect_path: user_path(user) }.to_json
+            render json: { user_id: user.id, success: true }.to_json, status: :ok
           else
-            render json: { redirect_path: edit_user_path(user), errors: user.errors.full_messages }.to_json
+            render json: { errors: user.errors.full_messages }.to_json,
+                   status: :unprocessable_entity
           end
         end
       end
