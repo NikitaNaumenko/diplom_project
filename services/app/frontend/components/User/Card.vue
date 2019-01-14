@@ -13,13 +13,6 @@
         </div>
       </vs-col>
       <vs-col vs-type="flex" vs-justify="flex-end" vs-align="center" vs-w="3">
-        <vs-button
-          color="dark"
-          type="line"
-          icon-pack="far"
-          icon="fa-edit"
-          :href="editLink()"
-        />
       </vs-col>
     </vs-row>
     <vs-row>
@@ -67,11 +60,6 @@ export default {
         {}
       );
     });
-  },
-  methods: {
-    editLink() {
-      return `${window.location.pathname}/edit`;
-    }
   }
 };
 </script>

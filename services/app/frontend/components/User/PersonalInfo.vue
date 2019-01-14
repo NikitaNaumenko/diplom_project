@@ -1,10 +1,21 @@
 <template>
-  <form>
+  <form @submit.prevent="onSubmit">
+    <vs-button
+      color="rgb(11, 189, 135)"
+      type="flat"
+      @click="onClick"
+      icon-pack="fas"
+      disabled
+      id="update-user-btn"
+      icon="fa-check"
+      >{{ this.$t("buttons.update") }}</vs-button
+    >
     <vs-row>
       <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="2">
         <vs-input
           :label="this.$t('users.card.personalInfo.firstName')"
           :placeholder="user.firstName"
+          @input="onInputChange"
           color="rgb(11, 189, 135)"
           v-model="user.firstName"
         />
@@ -13,6 +24,7 @@
         <vs-input
           :label="this.$t('users.card.personalInfo.lastName')"
           :placeholder="user.lastName"
+          @input="onInputChange"
           color="rgb(11, 189, 135)"
           v-model="user.lastName"
         />
@@ -21,6 +33,7 @@
         <vs-input
           :label="this.$t('users.card.personalInfo.patronymic')"
           :placeholder="user.patronymic"
+          @input="onInputChange"
           color="rgb(11, 189, 135)"
           v-model="user.patronymic"
         />
@@ -29,6 +42,7 @@
         <vs-input
           :label="this.$t('users.card.personalInfo.birthdate')"
           :placeholder="user.birthdate"
+          @input="onInputChange"
           color="rgb(11, 189, 135)"
           v-model="user.birthdate"
         />
@@ -38,6 +52,7 @@
         <vs-select
           :label="this.$t('users.card.personalInfo.workState')"
           color="#0bbd87"
+          @change="onSelectChange"
           v-model="user.workState"
           icon-pack="fas"
           icon="fa-angle-down"
@@ -54,6 +69,7 @@
         <vs-input
           :label="this.$t('users.card.personalInfo.employeeNumber')"
           :placeholder="user.employeeNumber"
+          @input="onInputChange"
           color="#0bbd87"
           v-model="user.employeeNumber"
         />
@@ -64,6 +80,7 @@
         <vs-select
           class="selectExample"
           color="#0bbd87"
+          @change="onSelectChange"
           :label="this.$t('users.card.personalInfo.citizenship')"
           v-model="user.citizenship"
           icon-pack="fas"
@@ -81,6 +98,7 @@
         <vs-input
           :label="this.$t('users.card.personalInfo.birthplace')"
           color="#0bbd87"
+          @input="onInputChange"
           :placeholder="user.birthplace"
           v-model="user.birthplace"
         />
@@ -91,6 +109,7 @@
           color="#0bbd87"
           :label="this.$t('users.card.personalInfo.gender')"
           v-model="user.gender"
+          @change="onSelectChange"
           icon-pack="fas"
           icon="fa-angle-down"
         >
@@ -106,6 +125,7 @@
         <vs-select
           class="selectExample"
           color="#0bbd87"
+          @change="onSelectChange"
           :label="this.$t('users.card.personalInfo.maritalStatus')"
           v-model="user.maritalStatus"
           icon-pack="fas"
@@ -123,9 +143,43 @@
   </form>
 </template>
 <script>
+import axios from "axios";
+
 export default {
   props: {
     userAttributes: Object
+  },
+  methods: {
+    onClick() {
+      console.log("123");
+    },
+    onSubmit() {
+      axios
+        .patch(`/users/${this.user.id}`, {
+          first_name: this.user.firstName
+        })
+        .then(() => {
+          this.$vs.notify({
+            title: this.$t("users.update.success"),
+            color: "rgb(11, 189, 135)",
+            iconPack: "fas",
+            icon: "fa-check",
+            time: 50000,
+            position: "top-right"
+          });
+        })
+        .catch(error => {
+          console.log(error.response);
+        });
+    },
+    onSelectChange() {
+      const updateBtn = document.getElementById("update-user-btn");
+      updateBtn.disabled = false;
+    },
+    onInputChange() {
+      const updateBtn = document.getElementById("update-user-btn");
+      updateBtn.disabled = false;
+    }
   },
   data() {
     return {
