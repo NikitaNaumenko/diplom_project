@@ -62,7 +62,9 @@ module Web
     end
 
     def permitted_params
-      params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation,
+                                   :birthplace, :patronymic, :birthdate, :work_state, :employee_number,
+                                   :citizenship, :birthplace, :gender, :marital_status)
     end
   end
 end
