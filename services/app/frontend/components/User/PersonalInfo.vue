@@ -156,7 +156,16 @@ export default {
     onSubmit() {
       axios
         .patch(`/users/${this.user.id}`, {
-          first_name: this.user.firstName
+          first_name: this.user.firstName,
+          last_name: this.user.lastName,
+          patronymic: this.user.patronymic,
+          birthdate: this.user.birthdate,
+          work_state: this.user.workState,
+          employee_number: this.user.employeeNumber,
+          citizenship: this.user.citizenship,
+          birthplace: this.user.birthplace,
+          gender: this.user.gender,
+          marital_status: this.user.maritalStatus
         })
         .then(() => {
           this.$vs.notify({
