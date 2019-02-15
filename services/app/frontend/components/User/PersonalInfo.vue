@@ -1,17 +1,7 @@
 <template>
   <form @submit.prevent="onSubmit">
-    <vs-button
-      color="rgb(11, 189, 135)"
-      type="flat"
-      @click="onClick"
-      icon-pack="fas"
-      disabled
-      id="update-user-btn"
-      icon="fa-check"
-      >{{ this.$t("buttons.update") }}</vs-button
-    >
-    <vs-row>
-      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="2">
+    <vs-row vs-justify="center">
+      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="8">
         <vs-input
           :label="this.$t('users.card.personalInfo.firstName')"
           :placeholder="user.firstName"
@@ -20,7 +10,9 @@
           v-model="user.firstName"
         />
       </vs-col>
-      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="2">
+    </vs-row>
+    <vs-row vs-justify="center">
+      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="8">
         <vs-input
           :label="this.$t('users.card.personalInfo.lastName')"
           :placeholder="user.lastName"
@@ -29,7 +21,9 @@
           v-model="user.lastName"
         />
       </vs-col>
-      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="2">
+    </vs-row>
+    <vs-row vs-justify="center">
+      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="8">
         <vs-input
           :label="this.$t('users.card.personalInfo.patronymic')"
           :placeholder="user.patronymic"
@@ -38,7 +32,9 @@
           v-model="user.patronymic"
         />
       </vs-col>
-      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="2">
+    </vs-row>
+    <vs-row vs-justify="center">
+      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="8">
         <vs-input
           :label="this.$t('users.card.personalInfo.birthdate')"
           :placeholder="user.birthdate"
@@ -47,8 +43,9 @@
           v-model="user.birthdate"
         />
       </vs-col>
-
-      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="2">
+    </vs-row>
+    <vs-row vs-justify="center">
+      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="8">
         <vs-select
           :label="this.$t('users.card.personalInfo.workState')"
           color="#0bbd87"
@@ -65,7 +62,9 @@
           />
         </vs-select>
       </vs-col>
-      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="2">
+    </vs-row>
+    <vs-row vs-justify="center">
+      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="8">
         <vs-input
           :label="this.$t('users.card.personalInfo.employeeNumber')"
           :placeholder="user.employeeNumber"
@@ -75,8 +74,8 @@
         />
       </vs-col>
     </vs-row>
-    <vs-row>
-      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="4">
+    <vs-row vs-justify="center">
+      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="8">
         <vs-select
           class="selectExample"
           color="#0bbd87"
@@ -94,7 +93,9 @@
           />
         </vs-select>
       </vs-col>
-      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="4">
+    </vs-row>
+    <vs-row vs-justify="center">
+      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="8">
         <vs-input
           :label="this.$t('users.card.personalInfo.birthplace')"
           color="#0bbd87"
@@ -103,7 +104,9 @@
           v-model="user.birthplace"
         />
       </vs-col>
-      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="2">
+    </vs-row>
+    <vs-row vs-justify="center">
+      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="8">
         <vs-select
           class="selectExample"
           color="#0bbd87"
@@ -121,7 +124,9 @@
           />
         </vs-select>
       </vs-col>
-      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="2">
+    </vs-row>
+    <vs-row vs-justify="center">
+      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="8">
         <vs-select
           class="selectExample"
           color="#0bbd87"
@@ -139,6 +144,20 @@
           />
         </vs-select>
       </vs-col>
+    </vs-row>
+    <vs-row vs-justify="center">
+      <div class="m20">
+        <vs-button
+          color="rgb(11, 189, 135)"
+          type="flat"
+          @click="onClick"
+          icon-pack="fas"
+          disabled
+          id="update-user-btn"
+          icon="fa-check"
+          >{{ this.$t("buttons.update") }}</vs-button
+        >
+      </div>
     </vs-row>
   </form>
 </template>
@@ -237,28 +256,3 @@ export default {
   }
 };
 </script>
-<style>
-.con-select {
-  margin-bottom: 10px;
-  width: 100%;
-}
-.vs-input {
-  width: 100%;
-}
-.vs-input--input {
-  border-radius: 0px;
-  border: 0px !important;
-}
-.vs-select--input {
-  border-radius: 0px;
-  padding: 6.5px;
-  border: 0px !important;
-}
-.vs-input--label,
-.vs-select--label {
-  font-size: 0.9rem;
-  display: block;
-  background-color: #0bbd87;
-  color: #ffffff;
-}
-</style>

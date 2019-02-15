@@ -13,7 +13,7 @@ yarn-install-dev:
 	docker-compose run app yarn add -D @babel/cli @babel/core @babel/preset-env
 
 yarn-upgrade:
-	docker-compose run app yarn upgrade vuesax --latest
+	docker-compose run app yarn upgrade
 
 yarn-remove:
 	docker-compose run app yarn remove vue-sidebar-menu
