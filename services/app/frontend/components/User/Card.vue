@@ -18,7 +18,7 @@
     <vs-row>
       <vs-tabs vs-position="left" color="rgb(11, 189, 135)">
         <vs-tab :vs-label="this.$t('users.card.general.title')">
-          <general-info></general-info>
+          <general-info v-bind:userAttributes="user"></general-info>
         </vs-tab>
         <vs-tab :vs-label="this.$t('users.card.workInfo.title')">
           <work-info></work-info>
@@ -47,7 +47,7 @@ export default {
     PersonalInfo,
     WorkInfo
   },
-  created() {
+  beforeCreate() {
     axios.get(window.location.pathname).then(response => {
       this.user = _.transform(
         response.data.data.attributes,

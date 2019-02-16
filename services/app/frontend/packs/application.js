@@ -22,6 +22,7 @@ import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import VueI18n from "vue-i18n";
 import translations from "../config/locales/translations";
+import 'bootstrap/dist/js/bootstrap';
 
 import Sidebar from "../components/Sidebar.vue";
 import UsersIndex from "../views/Users/Index.vue";
