@@ -22,12 +22,14 @@ gem 'fast_jsonapi'
 
 gem 'oauth2'
 
+gem 'country_select'
 gem 'interactor'
 gem 'jbuilder', '~> 2.5'
 gem 'kruger', '~> 0.1.1'
 gem 'ledermann-rails-settings'
 gem 'pundit'
 gem 'rails-i18n', '~> 5.1'
+gem 'responders'
 gem 'rs_russian'
 gem 'simple_form'
 
@@ -35,7 +37,6 @@ gem 'simple_form'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-gem 'countries'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

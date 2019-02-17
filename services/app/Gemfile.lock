@@ -58,6 +58,9 @@ GEM
       i18n_data (~> 0.8.0)
       sixarm_ruby_unaccent (~> 1.1)
       unicode_utils (~> 1.4)
+    country_select (4.0.0)
+      countries (~> 3.0)
+      sort_alphabetical (~> 1.0)
     crass (1.0.4)
     dotenv (2.6.0)
     dotenv-rails (2.6.0)
@@ -208,6 +211,9 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
+    responders (2.4.1)
+      actionpack (>= 4.2.0, < 6.0)
+      railties (>= 4.2.0, < 6.0)
     rs_russian (0.13.0)
       activesupport (>= 3.0.0, < 6.0.0)
       i18n (~> 1.1.0)
@@ -233,6 +239,8 @@ GEM
       actionpack (>= 3.1)
       railties (>= 3.1)
       slim (>= 3.0, < 5.0)
+    sort_alphabetical (1.1.0)
+      unicode_utils (>= 1.2.2)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -275,7 +283,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.1.0)
   byebug
-  countries
+  country_select
   dotenv-rails
   dry-monads
   dry-validation
@@ -295,6 +303,7 @@ DEPENDENCIES
   pundit
   rails (~> 5.2.1)
   rails-i18n (~> 5.1)
+  responders
   rs_russian
   rubocop
   simple_form
