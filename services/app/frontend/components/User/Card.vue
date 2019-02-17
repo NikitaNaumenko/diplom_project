@@ -46,20 +46,6 @@ export default {
     GeneralInfo,
     PersonalInfo,
     WorkInfo
-  },
-  beforeCreate() {
-    axios.get(window.location.pathname).then(response => {
-      this.user = _.transform(
-        response.data.data.attributes,
-        (result, value, key) => {
-          const camelCaseKey = _.camelCase(key);
-          const resultObject = result;
-          resultObject[camelCaseKey] = value;
-          return result;
-        },
-        {}
-      );
-    });
   }
 };
 </script>

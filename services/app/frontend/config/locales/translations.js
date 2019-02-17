@@ -19,7 +19,7 @@ export default {
     users: {
       update: {
         success: "Пользователь успешно обновлен",
-        error: "При обновлении произошла ошибка"
+        error: "Упс! При обновлении произошла ошибка"
       },
       attributes: {
         workState: {
@@ -54,8 +54,8 @@ export default {
         workInfo: {
           title: "Рабочая информация"
         },
-        personalInfo: {
-          title: "Личная информация",
+        generalInfo: {
+          title: "Общая информация",
           firstName: "Имя",
           lastName: "Фамилия",
           patronymic: "Отчество",

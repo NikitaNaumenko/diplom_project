@@ -169,9 +169,6 @@ export default {
     userAttributes: Object
   },
   methods: {
-    onClick() {
-      console.log("123");
-    },
     onSubmit() {
       axios
         .patch(`/users/${this.user.id}`, {
@@ -197,6 +194,15 @@ export default {
           });
         })
         .catch(error => {
+          this.$vs.notify({
+            title: this.$t("users.update.error"),
+            color: "danger",
+            iconPack: "fas",
+            icon: "fa-check",
+            time: 50000,
+            position: "top-right"
+          });
+
           console.log(error.response);
         });
     },
