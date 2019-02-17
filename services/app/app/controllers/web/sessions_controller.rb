@@ -3,9 +3,10 @@
 module Web
   class SessionsController < ApplicationController
     skip_before_action :check_current_user
-    layout 'session'
 
-    def new; end
+    def new
+      @form = Users::LoginType.new
+    end
 
     def create
       user = account.users.find_by(email: params[:email])

@@ -1,0 +1,13 @@
+ru:
+  simple_form:
+    placeholders:
+      users_login_type:
+        new:
+          email: Email
+          password: Пароль
+      account:
+  helpers:
+    submit:
+      users_login_type:
+        create: Войти
+

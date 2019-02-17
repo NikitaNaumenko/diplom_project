@@ -4,7 +4,7 @@
 class AccountType < Account
   include ApplicationType
 
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
 
   permit :name, :phone, :email, users: %i[first_name password]
   validates :name, :email, presence: true, uniqueness: { case_sensitive: false }

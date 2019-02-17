@@ -1,0 +1,7 @@
+ru:
+  web:
+    sessions:
+      new:
+        auth: Вход
+        sign_in: Войти
+

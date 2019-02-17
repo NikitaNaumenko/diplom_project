@@ -3,9 +3,11 @@
 module Web
   class AccountsController < ApplicationController
     skip_before_action :check_current_user
-    layout 'account'
 
-    def new; end
+    def new
+      @form = AccountType.new
+      @form.users.build
+    end
 
     def create
       @account = Account.new(permitted_params)

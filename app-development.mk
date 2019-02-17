@@ -14,6 +14,8 @@ app-bash:
 
 app-console:
 	docker-compose run --user=$(USER) app bin/rails console
+app-gems-update:
+	docker-compose run --user=$(USER) app bin/bundle update
 app-gems-install:
 	docker-compose run --user=$(USER) app bin/bundle install
 app-yarn-install:
