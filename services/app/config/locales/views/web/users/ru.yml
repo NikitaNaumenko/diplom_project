@@ -1,0 +1,14 @@
+ru:
+  web:
+    users:
+      show:
+        basic_info: Основная информация
+        full_name: Полное имя
+        email: Email
+        birthplace: Место рождения
+        birthdate: Дата рождения
+        work_state: Статус
+        employee_number: Табельный номер
+        citizenship: Гражданство
+        gender: Пол
+        marital_status: Семейное положение

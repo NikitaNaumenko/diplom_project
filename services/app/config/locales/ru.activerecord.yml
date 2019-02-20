@@ -1,0 +1,7 @@
+ru:
+  activerecord:
+    attributes:
+      user:
+        work_state:
+          works: Работает
+          doesnt_work: Не работает

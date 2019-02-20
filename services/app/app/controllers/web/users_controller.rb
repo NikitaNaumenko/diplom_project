@@ -2,6 +2,8 @@
 
 module Web
   class UsersController < ApplicationController
+    helper_method :resource_user
+
     def index
       @users = account.users
       respond_to do |format|
@@ -12,15 +14,7 @@ module Web
       end
     end
 
-    def show
-      @user = ::UsersSerializer.new(user).serialized_json
-      respond_to do |format|
-        format.html
-        format.json do
-          render json: @user
-        end
-      end
-    end
+    def show; end
 
     def new; end
 
@@ -57,13 +51,13 @@ module Web
 
     private
 
-    def user
-      @user ||= account.users.find(params[:id])
+    def resource_user
+      @resource_user ||= account.users.find(params[:id])
     end
 
     def permitted_params
       params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation,
-                                   :birthplace, :patronymic, :birthdate, :work_state, :employee_number,
+                                   :patronymic, :birthdate, :work_state, :employee_number,
                                    :citizenship, :birthplace, :gender, :marital_status)
     end
   end

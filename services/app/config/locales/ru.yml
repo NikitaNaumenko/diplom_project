@@ -1,1 +1,12 @@
 ru:
+  enumerize:
+    user:
+      gender:
+        male: Мужской
+        female: Женский
+      marital_status:
+        widowed: Вдовец \ Вдова
+        civil_marriage: Гражданский брак
+        married: Женат \ Замужем
+        divorced: Разведен \ Разведена
+        single: Холост

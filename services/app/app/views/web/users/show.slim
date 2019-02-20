@@ -1,1 +1,99 @@
-/ users-show
+  .row
+    .col-12
+      .card
+        .card-body
+          .card-title.mb-4
+            .d-flex.justify-content-start
+              .image-container
+                img#imgProfile.rounded-circle.img-thumbnail src="http://placehold.it/150x150" style=("width: 150px; height: 150px") /
+                .middle
+                  input#btnChangePicture.btn.btn-secondary type="button" value="Change" /
+                  input#profilePicture name="file" style=("display: none;") type="file" /
+              .userData.ml-3
+                h2.d-block style=("font-size: 1.5rem; font-weight: bold") 
+                  = resource_user.full_name
+                  / a href="javascript:void(0);"  Some Name
+                h6.d-block
+                  a href="javascript:void(0)"  1,500
+                  | Video Uploads
+                h6.d-block
+                  a href="javascript:void(0)"  300
+                  | Blog Posts
+              .ml-auto
+                input#btnDiscard.btn.btn-primary.d-none type="button" value=("Discard Changes") /
+          .row
+            .col-12
+              ul#myTab.nav.nav-tabs.mb-4 role="tablist" 
+                li.nav-item
+                  = link_to '#basicInfo', class: 'nav-link active', id: 'basicInfo-tab',
+                    aria: { controls: 'basicInfo', selected: 'true' }, data: { toggle: 'tab', role: 'tab' } do
+                    = t('.basic_info')
+                li.nav-item
+                  a#connectedServices-tab.nav-link aria-controls="connectedServices" aria-selected="false" data-toggle="tab" href="#connectedServices" role="tab"  Connected Services
+              #myTabContent.tab-content.ml-1
+                #basicInfo.tab-pane.fade.show.active aria-labelledby="basicInfo-tab" role="tabpanel" 
+                  .row
+                    .col-sm-3.col-md-6.col-6
+                      .row
+                        .col-sm-3.col-md-4.col-5
+                          label.font-weight-bold= t('.full_name')
+                        .col-md-8.col-6
+                          = resource_user.full_name
+                      hr/
+                      .row
+                        .col-sm-3.col-md-4.col-5
+                          label.font-weight-bold= t(".email")
+                        .col-md-8.col-6
+                          = resource_user.email
+                      hr/
+                      .row
+                        .col-sm-3.col-md-4.col-5
+                          label.font-weight-bold= t(".birthdate")
+                        .col-md-8.col-6
+                          - if resource_user.birthdate
+                            = l(resource_user.birthdate, format: :short)
+                      hr/
+                      .row
+                        .col-sm-3.col-md-4.col-5
+                          label.font-weight-bold= t(".birthplace")
+                        .col-md-8.col-6
+                          = resource_user.birthplace
+                      hr/
+                      .row
+                        .col-sm-3.col-md-4.col-5
+                          label.font-weight-bold= t(".citizenship")
+                        .col-md-8.col-6
+                          = resource_user.citizenship
+                    .col-sm-3.col-md-6.col-6
+                      .row
+                        .col-sm-3.col-md-4.col-5
+                          label.font-weight-bold= t(".birthplace")
+                        .col-md-8.col-6
+                          = resource_user.birthplace
+                      hr/
+                      .row
+                        .col-sm-3.col-md-4.col-5
+                          label.font-weight-bold= t(".work_state")
+                        .col-md-8.col-6
+                          = resource_user.aasm.human_state
+                      hr/
+                      .row
+                        .col-sm-3.col-md-4.col-5
+                          label.font-weight-bold= t(".employee_number")
+                        .col-md-8.col-6
+                          = resource_user.employee_number
+                      hr/
+                      .row
+                        .col-sm-3.col-md-4.col-5
+                          label.font-weight-bold= t(".gender")
+                        .col-md-8.col-6
+                          = resource_user.gender_text
+                      hr/
+                      .row
+                        .col-sm-3.col-md-4.col-5
+                          label.font-weight-bold= t(".marital_status")
+                        .col-md-8.col-6
+                          = resource_user.marital_status_text
+                #connectedServices.tab-pane.fade aria-labelledby="ConnectedServices-tab" role="tabpanel" 
+                  | Facebook, Google, Twitter Account that are connected to this account
+

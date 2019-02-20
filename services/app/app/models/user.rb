@@ -39,6 +39,10 @@ class User < ApplicationRecord
     end
   end
 
+  def full_name
+    "#{last_name} #{first_name} #{patronymic}"
+  end
+
   private
 
   def email_from_account
