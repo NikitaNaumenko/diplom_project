@@ -3,7 +3,7 @@
 ### Requirements
   * Mac / Linux
   * Docker
-  * Docker Compose
+  * Docker Compose.
 
 ### Install
 
