@@ -1,4 +1,4 @@
-const { environment } = require("@rails/webpacker");
+// const { environment } = require("@rails/webpacker");
 
 // const webpack = require("webpack");
 // environment.plugins.set(
@@ -9,4 +9,18 @@ const { environment } = require("@rails/webpacker");
 //     Popper: ["popper.js", "default"]
 //   })
 // );
+// module.exports = environment;
+//
+const { environment } = require("@rails/webpacker");
+const webpack = require("webpack");
+
 module.exports = environment;
+
+environment.plugins.prepend(
+  "Provide",
+  new webpack.ProvidePlugin({
+    $: "jquery",
+    jQuery: "jquery",
+    jquery: "jquery"
+  })
+);

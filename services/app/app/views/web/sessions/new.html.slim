@@ -3,7 +3,7 @@
     .card.shadow.border-top.border-primary
       .card-body.p-4
         h1.h3.mb-4.mt-3= t('.auth')
-        = simple_form_for @form, defaults: { label: false }, url: sessions_path do |f|
+        = simple_form_for @user, defaults: { label: false }, url: sessions_path do |f|
           = f.input :email, autofocus: true
           = f.input :password
           .my-4

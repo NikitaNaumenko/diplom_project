@@ -3,7 +3,7 @@
     .card.shadow.border-top.border-primary
       .card-body.p-4
         h1.h3.mb-4.mt-3= t('.registration')
-        = simple_form_for @form, url: accounts_path do |f|
+        = simple_form_for @account, url: accounts_path do |f|
           = f.input :name, autofocus: true
           = f.input :email
           = f.simple_fields_for :users do |uf|

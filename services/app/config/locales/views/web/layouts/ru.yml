@@ -2,3 +2,4 @@ ru:
   layouts:
     application:
       home: Мои данные
+      logout: Выход

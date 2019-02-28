@@ -5,8 +5,8 @@ module Web
     skip_before_action :check_current_user
 
     def new
-      @form = AccountType.new
-      @form.users.build
+      @account = AccountType.new
+      @account.users.build
     end
 
     def create
@@ -14,7 +14,7 @@ module Web
       if @account.save
         render json: { redirect_path: users_path }.to_json
       else
-        render json: { redirect_path: new_account_path, errors: @account.errors.full_messages }
+        render 'new'
       end
     end
 

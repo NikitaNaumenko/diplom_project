@@ -5,16 +5,17 @@ module Web
     skip_before_action :check_current_user
 
     def new
-      @form = Users::LoginType.new
+      redirect_to root_path if signed_in?
+      @user = Users::LoginType.new
     end
 
     def create
-      user = account.users.find_by(email: params[:email])
-      if user&.authenticate(params[:password])
+      @user = account.users.find_by(email: params[:email])
+      if @user&.authenticate(params[:password])
         session[:user_id] = user.id
-        render json: { redirect_path: root_path }.to_json
+        redirect_to root_path
       else
-        render json: { redirect_path: login_path }.to_json
+        render 'new'
       end
     end
 
