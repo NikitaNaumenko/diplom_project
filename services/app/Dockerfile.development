@@ -15,6 +15,7 @@ RUN apt-get update -qq \
   nodejs \
   && rm -rf /var/lib/apt/lists/*t
 
+RUN apt-get install imagemagick
 ENV PROJECT_ROOT /usr/src/app
 ENV BUNDLE_PATH $PROJECT_ROOT/vendor/bundle
 ENV GEM_HOME $PROJECT_ROOT/vendor/bundle

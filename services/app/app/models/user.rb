@@ -13,8 +13,8 @@ class User < ApplicationRecord
   has_many :skills, through: :user_skills
   has_many :user_educations, class_name: User::Education.name, dependent: :nullify
   has_many :educations, through: :user_educations
+  has_one_attached :photo
 
-  before_validation :email_from_account, if: proc { email.nil? }
   before_save { self.email = email.downcase }
 
   validates :first_name, :email, presence: true

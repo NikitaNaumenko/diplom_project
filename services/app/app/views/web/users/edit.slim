@@ -1,1 +1,28 @@
-user-form
+.row
+  .col-12
+    .card.my-2
+      h2.text-lg-center.my-2
+        = t('.title')
+      .card-body
+        = simple_form_for resource_user, wrapper: :horizontal_form do |f|
+          = render 'web/shared/flash'
+          .row
+            .col-lg-4.pull-lg-8.text-xs-center
+              = image_tag(user_photo(resource_user), class: 'rounded-circle img-thumbnail', width: '150', height: '150')
+              h6.m-t-2
+                .my-2
+                  = t('.upload_photo')
+                = f.input :photo, label: false
+            .col-lg-8.push-lg-4.personal-info
+                = f.input :first_name
+                = f.input :last_name
+                = f.input :patronymic
+                = f.input :email
+                = f.input :birthplace
+                = f.input :birthdate, as: :date, html5: true
+                = f.input :gender, collection: User.gender.options, label_method: :first, value_method: :second
+                = f.input :marital_status, collection: User.marital_status.options, label_method: :first, value_method: :second
+                = f.input :citizenship, as: :country, priority: ['RU']
+                = f.button :submit, class: 'btn btn-primary'
+          hr/
+

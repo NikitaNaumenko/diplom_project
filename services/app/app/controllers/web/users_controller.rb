@@ -27,26 +27,11 @@ module Web
       end
     end
 
-    def edit
-      respond_to do |format|
-        format.html
-        format.json do
-          render json: { user: user }.to_json
-        end
-      end
-    end
+    def edit; end
 
     def update
-      respond_to do |format|
-        format.json do
-          if user.update(permitted_params)
-            render json: { user_id: user.id, success: true }.to_json, status: :ok
-          else
-            render json: { errors: user.errors.full_messages }.to_json,
-                   status: :unprocessable_entity
-          end
-        end
-      end
+      resource_user.update(permitted_params)
+      respond_with resource_user, location: -> { user_path(resource_user) }
     end
 
     private
@@ -57,7 +42,7 @@ module Web
 
     def permitted_params
       params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation,
-                                   :patronymic, :birthdate, :work_state, :employee_number,
+                                   :patronymic, :birthdate, :work_state, :employee_number, :photo,
                                    :citizenship, :birthplace, :gender, :marital_status)
     end
   end

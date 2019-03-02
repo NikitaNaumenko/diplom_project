@@ -6,21 +6,24 @@ module Web
 
     def new
       redirect_to root_path if signed_in?
-      @user = Users::LoginType.new
+      @form = Users::LoginType.new
     end
 
     def create
-      @user = account.users.find_by(email: params[:email])
-      if @user&.authenticate(params[:password])
-        session[:user_id] = user.id
+      @form = Users::LoginType.new(params[:users_login_type].merge(account_id: account.id))
+      user = @form.user
+      if @form.authenticate_user?
+        sign_in(user)
+        flash[:success] = t('.notice', scope: :flash)
         redirect_to root_path
       else
-        render 'new'
+        flash[:danger] = t('.alert', scope: :flash)
+        render :new
       end
     end
 
     def destroy
-      session[:user_id] = nil
+      sign_out
       redirect_to root_url
     end
   end

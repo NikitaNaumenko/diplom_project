@@ -4,6 +4,7 @@ tmp/
 /public/packs
 /public/packs-test
 /node_modules
+/storage
 yarn-debug.log*
 .yarn-integrity
 .byebug_history

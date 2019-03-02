@@ -1,0 +1,5 @@
+- flash.each do |key, value|
+  = content_tag :div, class: "#{flash_class(key)} alert-dismissible fade show my-2", role: 'alert' do
+    = value
+    = link_to '#', class: "close", data: { dismiss: "alert" }, aria: { label: "Close"} do
+      span aria-hidden="true"  &times;

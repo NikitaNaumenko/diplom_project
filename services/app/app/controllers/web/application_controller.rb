@@ -7,6 +7,8 @@ module Web
     prepend_view_path Rails.root.join('frontend')
     before_action :check_current_user
 
+    helper_method :account
+
     def account
       @account ||= Account.find_by(name: request.subdomain.presence || params[:account_name])
     end

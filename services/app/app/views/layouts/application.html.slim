@@ -15,7 +15,7 @@ html
         aria: { controls: "navbarSupportedContent", expanded: "false", label: "Toggle navigation" } do
          span.navbar-toggler-icon
       #navbarSupportedContent.collapse.navbar-collapse
-        ul.navbar-nav.mr-auto
+        ul.navbar-nav.w-100
           li.nav-item.active
             = link_to user_path(current_user), class: "nav-link" do
               i.fas.fa-user.mx-1
@@ -32,15 +32,12 @@ html
               a.dropdown-item href="#"  Something else here
           li.nav-item
             a.nav-link.disabled aria-disabled="true" href="#" tabindex="-1"  Disabled
-          li.nav-item
+          li.nav-item.ml-auto
             - if signed_in?
               = link_to logout_path, method: :delete, data: { confirm: 'asd' }, class: 'nav-link' do
                 i.fas.fa-sign-out-alt.mx-1
                 = t('.logout')
 
-        / form.form-inline.my-2.my-lg-0
-        /   input.form-control.mr-sm-2 aria-label="Search" placeholder="Search" type="search" /
-        /   button.btn.btn-outline-success.my-2.my-sm-0 type="submit"  Search
-
     main.container#app
+      = render 'web/shared/flash'
       = yield
