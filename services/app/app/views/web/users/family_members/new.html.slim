@@ -1,0 +1,21 @@
+.row
+  .col-12
+    .card.my-2
+      h2.text-lg-center.my-2
+        = t('.title')
+      .card-body
+        = simple_form_for @family_member, wrapper: :horizontal_form do |f|
+          = render 'web/shared/flash'
+          .row
+            .col-lg-4.pull-lg-8.text-xs-center
+              h6.m-t-2
+                .my-2
+                  = t('.upload_photo')
+            .col-lg-8.push-lg-4.personal-info
+                = f.input :first_name
+                = f.input :last_name
+                = f.input :patronymic
+                = f.input :birthdate, as: :date, html5: true
+                = f.button :submit, class: 'btn btn-primary'
+          hr/
+

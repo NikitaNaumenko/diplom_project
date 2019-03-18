@@ -1,0 +1,46 @@
+.row
+  .col-3.col-sm-6.col-md-12
+    .col-3.col-sm-6.col-md-12.py-3.border.border-info.rounded.shadow-sm
+      .row.mb-3
+        .col-12.d-flex
+          h5.mb-3
+            = t('.kinship_title')
+          = link_to new_user_family_member_path(user), class: 'btn btn-outline-primary ml-auto' do
+            span.fas.fa-edit.ml-1
+            = t('.edit')
+      .row
+        table.table.table-hover
+          thead
+            tr
+              th scope='col'
+                = t('.kinship')
+              th scope='col'
+                = t('.first_name')
+              th scope='col'
+                = t('.last_name')
+              th scope='col'
+                = t('.patronymic')
+              th scope='col'
+                = t('.birthdate')
+              th scope='col'
+          tbody
+          - family_members.each do |fm|
+            tr
+              td
+                = fm.kinship
+              td
+                = fm.first_name
+              td
+                = fm.last_name
+              td
+                = fm.patronymic
+              td
+                = fm.birthdate
+              td
+                = link_to user_family_member_path(fm, user), method: :destroy, data: { toggle: "tooltip", placement: "top"}, title: "Tooltip on top" do
+                  span.fas.fa-times-circle
+.row
+.row
+.row
+.row
+.row

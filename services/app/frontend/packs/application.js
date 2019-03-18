@@ -12,7 +12,12 @@ import "../css/application.scss";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+import "popper.js";
 import "bootstrap";
 import "jquery";
 import "jquery-ujs";
 library.add(faCoffee);
+console.log("123");
+$(function() {
+  $('[data-toggle="tooltip"]').tooltip();
+});

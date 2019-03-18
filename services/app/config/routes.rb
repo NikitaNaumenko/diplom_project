@@ -8,7 +8,11 @@ Rails.application.routes.draw do
 
     resources :sessions, only: %i[new create destroy]
     resources :accounts, only: %i[new create]
-    resources :users
+    resources :users do
+      scope module: :users do
+        resources :family_members
+      end
+    end
     namespace :settings do
       namespace :catalogs do
         resources :skills

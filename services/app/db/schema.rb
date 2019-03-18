@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_02_180754) do
+ActiveRecord::Schema.define(version: 2019_03_17_125212) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -102,6 +102,18 @@ ActiveRecord::Schema.define(version: 2019_03_02_180754) do
     t.index ["user_id"], name: "index_user_educations_on_user_id"
   end
 
+  create_table "user_family_members", force: :cascade do |t|
+    t.string "kinship"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "patronymic"
+    t.datetime "birthdate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_user_family_members_on_user_id"
+  end
+
   create_table "user_skills", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -137,6 +149,7 @@ ActiveRecord::Schema.define(version: 2019_03_02_180754) do
   add_foreign_key "token_moi_krugs", "accounts"
   add_foreign_key "user_educations", "educations"
   add_foreign_key "user_educations", "users"
+  add_foreign_key "user_family_members", "users"
   add_foreign_key "user_skills", "skills"
   add_foreign_key "user_skills", "users"
   add_foreign_key "users", "accounts"

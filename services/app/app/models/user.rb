@@ -9,10 +9,11 @@ class User < ApplicationRecord
   has_secure_password
 
   belongs_to :account
-  has_many :user_skills, class_name: User::Skill.name, dependent: :nullify
+  has_many :user_skills, class_name: User::Skill.name, dependent: :destroy
   has_many :skills, through: :user_skills
-  has_many :user_educations, class_name: User::Education.name, dependent: :nullify
+  has_many :user_educations, class_name: User::Education.name, dependent: :destroy
   has_many :educations, through: :user_educations
+  has_many :family_members, class_name: User::FamilyMember.name, dependent: :destroy
   has_one_attached :photo
 
   before_save { self.email = email.downcase }

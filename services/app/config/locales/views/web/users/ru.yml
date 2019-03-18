@@ -1,9 +1,7 @@
 ru:
   web:
     users:
-      show:
-        edit: Редактировать данные
-        basic_info: Основная информация
+      basic_info_template:
         full_name: Полное имя
         email: Email
         birthplace: Место рождения
@@ -13,6 +11,18 @@ ru:
         citizenship: Гражданство
         gender: Пол
         marital_status: Семейное положение
+      personal_info_template:
+        kinship_title: Родственники, состав семьи
+        first_name: Имя
+        last_name: Фамилия
+        patronymic: Отчество
+        birthdate: Дата рождения
+        edit: Редактировать
+        kinship: Родство
+      show:
+        edit: Редактировать данные
+        basic_info: Основная информация
+        personal_info: Личная информация
       edit:
         title: Обновление информации
         upload_photo: Загрузите новую фотографию
