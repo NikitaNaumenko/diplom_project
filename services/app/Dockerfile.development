@@ -21,3 +21,7 @@ RUN apt-get update -qq \
 
 ENV BUNDLE_PATH $PROJECT_ROOT/vendor/bundle
 ENV GEM_HOME $PROJECT_ROOT/vendor/bundle
+COPY Gemfile ./Gemfile
+COPY Gemfile.lock ./Gemfile.lock
+
+COPY package.json yarn.lock ./

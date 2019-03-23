@@ -1,0 +1,9 @@
+---
+- hosts: all
+  gather_facts: no
+  tasks:
+    - name: Create env variables
+      template:
+        src: environment.j2
+        dest: ../.env
+      tags: environment

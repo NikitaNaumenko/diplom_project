@@ -1,0 +1,8 @@
+---
+- hosts: all
+  tasks:
+    - name: Create env variables
+      template:
+        src: environment.j2
+        dest: ../.env
+      tags: environment
