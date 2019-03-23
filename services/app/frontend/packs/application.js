@@ -21,3 +21,4 @@ console.log("123");
 $(function() {
   $('[data-toggle="tooltip"]').tooltip();
 });
+console.log("33");

@@ -1,8 +1,8 @@
-development-setup-env: development-ansible-vaults-decrypt
+development-setup-env:
 	ansible-playbook ansible/development.yml -i ansible/development -vv
 
 development-ansible-vaults-encrypt:
-	ansible-vault encrypt ansible/development/group_vars/all/vault.yml
+	ansible-vault encrypt ansible/development/group_vars/all/vault.yml || true
 
 development-ansible-vaults-decrypt:
 	ansible-vault decrypt ansible/development/group_vars/all/vault.yml

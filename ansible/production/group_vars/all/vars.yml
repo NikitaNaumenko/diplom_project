@@ -1,2 +1,4 @@
 ---
 rails_env: production
+webpacker_dev_server_host: webpacker
+rack_timeout_service_timeout: 'false'

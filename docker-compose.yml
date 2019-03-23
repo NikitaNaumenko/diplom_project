@@ -2,15 +2,17 @@ version: '3.5'
 
 services:
   db:
-    #read_only: true
     image: postgres
-    volumes:
-      - pgdata:/var/lib/postgresql/data
+    # volumes:
+    #   - pgdata:/var/lib/postgresql/data
+    # environment:
+    #   POSTGRES_USER: app
+
   webpacker:
     build:
       context: services/app
       dockerfile: Dockerfile.development
-    command: ./bin/webpack-dev-server --inline true
+    command: make frontend_watch
     volumes:
       - './services/app:/usr/src/app'
     env_file:
@@ -40,7 +42,7 @@ services:
       - app
       - webpacker
     ports:
-      - "${PORT}:${PORT}"
+      - "${APP_PORT}:${APP_PORT}"
 volumes:
   pgdata:
 
