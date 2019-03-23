@@ -43,6 +43,12 @@ services:
     build:
       context: services/nginx
       dockerfile: Dockerfile
+    depends_on:
+      - app
+      - webpacker
+    ports:
+      - "80:80"
+
 volumes:
   pgdata:
 
