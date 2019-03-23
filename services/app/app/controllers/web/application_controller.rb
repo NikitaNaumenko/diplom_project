@@ -10,7 +10,7 @@ module Web
     helper_method :account
 
     def account
-      @account ||= Account.find_by(name: request.subdomain.presence || params[:account_name]) || Account.first
+      @account ||= Account.find_by(name: request.subdomain.presence || params[:account_name])
     end
 
     def check_current_user

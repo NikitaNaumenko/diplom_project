@@ -6,10 +6,10 @@ services:
     image: postgres
     environment:
       POSTGRES_USER: app
-    ports:
-      - '5432:5432'
-    # volumes:
-    #   - 'postgres:/var/lib/postgresql/data'
+    # ports:
+    #   - '5432:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
   webpacker:
     build:
       context: services/app
@@ -27,7 +27,7 @@ services:
     build:
       context: services/app
       dockerfile: Dockerfile.development
-    command: sh -c "rm -f tmp/pids/server.pid && bin/rails s -b 0.0.0.0 -p3000"
+    command: sh -c "rm -f tmp/pids/server.pid && bin/rails s -b 0.0.0.0"
     ports:
       - "3000:3000"
     volumes: 
@@ -39,4 +39,10 @@ services:
       - webpacker
     env_file:
       ".env"
+  nginx:
+    build:
+      context: services/nginx
+      dockerfile: Dockerfile
+volumes:
+  pgdata:
 

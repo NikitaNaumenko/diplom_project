@@ -4,7 +4,7 @@ app-build:
 	docker-compose build
 
 app-setup: app-build
-	docker-compose run --user=$(USER) app bin/setup
+	docker-compose run app bin/setup
 
 app:
 	docker-compose up

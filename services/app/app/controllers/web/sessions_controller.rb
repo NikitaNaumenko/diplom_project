@@ -6,11 +6,11 @@ module Web
 
     def new
       redirect_to root_path if signed_in?
-      @form = Users::LoginType.new
+      @form = ::Users::LoginType.new
     end
 
     def create
-      @form = Users::LoginType.new(params[:users_login_type].merge(account_id: account.id))
+      @form = ::Users::LoginType.new(params[:users_login_type].merge(account_id: account.id))
       user = @form.user
       if @form.authenticate_user?
         sign_in(user)
