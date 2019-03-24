@@ -3,6 +3,3 @@ frontend_watch:
 
 build-production:
 	docker build -t naumenkonikita/diplom_project:$(T) -f services/app/Dockerfile.production services/app
-
-
-
