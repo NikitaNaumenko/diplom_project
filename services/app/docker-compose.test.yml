@@ -1,0 +1,16 @@
+version: '3.5'
+
+services:
+  db:
+    image: postgres
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.production
+    command: sh -c "bin/rails test -d"
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - RAILS_ENV=test

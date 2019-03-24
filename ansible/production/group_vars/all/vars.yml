@@ -1,3 +1,2 @@
 ---
 rails_env: production
-rack_timeout_service_timeout: 'false'
