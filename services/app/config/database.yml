@@ -14,7 +14,7 @@ development:
 
 test:
   <<: *default
-  database: apptest
+  database: app_test
   username: postgres
   password:
   host: <%= ENV['DB_HOST'] %>
