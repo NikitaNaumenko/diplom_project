@@ -1,2 +1,17 @@
 .idea/
 .env
+.vagrant/
+
+tmp
+
+*.retry
+
+terraform/.terraform
+.terraform.tfstate.lock*
+terraform.tfstate
+terraform.tfstate.backup
+terraform.tfvars
+
+terraform/secrets.auto.tfvars
+
+terraform/files/

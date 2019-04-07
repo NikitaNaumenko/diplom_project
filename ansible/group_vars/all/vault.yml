@@ -1,4 +1,0 @@
----
-vault_db_host: db
-vault_db_user: app
-vault_db_port: '5432'

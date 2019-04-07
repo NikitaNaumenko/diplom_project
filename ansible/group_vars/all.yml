@@ -1,4 +1,4 @@
 ---
 
-app_port: 80
+app_port: 3000
 rails_logs_to_stdout: true
