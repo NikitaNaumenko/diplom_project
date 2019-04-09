@@ -6,7 +6,7 @@ class AccountType < Account
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
 
-  permit :name, :phone, :email, users: %i[first_name password]
+  permit :name, :phone, :email, users_attributes: %i[first_name password]
   validates :name, :email, presence: true, uniqueness: { case_sensitive: false }
   validates :name, length: { maximum: 50 }
   validates :email, length: { maximum: 255 }

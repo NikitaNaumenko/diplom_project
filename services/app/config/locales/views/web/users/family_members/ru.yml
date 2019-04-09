@@ -1,0 +1,7 @@
+---
+ru:
+  web:
+    users:
+      family_members:
+        new:
+          title: Добавить члена семьи

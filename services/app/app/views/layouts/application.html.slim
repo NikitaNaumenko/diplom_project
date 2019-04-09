@@ -10,7 +10,7 @@ html
     = javascript_pack_tag 'application'
   body
     nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
-      = link_to "Personas", "#", class: 'navbar-brand'
+      = link_to "Personas", root_path, class: 'navbar-brand'
       = button_tag '', class: "navbar-toggler",  data: { toggle: "collapse", target: "#navbarSupportedContent" },
         aria: { controls: "navbarSupportedContent", expanded: "false", label: "Toggle navigation" } do
          span.navbar-toggler-icon
@@ -38,6 +38,6 @@ html
                 i.fas.fa-sign-out-alt.mx-1
                 = t('.logout')
 
-    main.container#app
+    main.container.py-2#app
       = render 'web/shared/flash'
       = yield

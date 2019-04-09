@@ -1,17 +1,11 @@
 # frozen_string_literal: true
 
 module Web
-  class UsersController < ApplicationController
+  class UsersController < Web::ApplicationController
     helper_method :resource_user
 
     def index
-      @users = account.users
-      respond_to do |format|
-        format.html
-        format.json do
-          render json: { users: @users }.to_json
-        end
-      end
+      @users = account.users.web
     end
 
     def show; end

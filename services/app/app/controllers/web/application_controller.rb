@@ -14,7 +14,11 @@ module Web
     end
 
     def check_current_user
-      return redirect_to login_path unless current_user
+      return unless current_user.guest?
+
+      return redirect_to login_path(account_name: account.name) if account
+
+      redirect_to new_account_path
     end
   end
 end

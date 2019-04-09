@@ -5,14 +5,20 @@ module Web
     skip_before_action :check_current_user
 
     def new
+      return redirect_to root_path if current_user.guest?
+
       @account = AccountType.new
       @account.users.build
     end
 
     def create
-      @account = Account.new(permitted_params)
+      @account = AccountType.new(permitted_params)
+      @account.users.first.email = @account.email
       if @account.save
-        render json: { redirect_path: users_path }.to_json
+        user = @account.users.first
+        sign_in(user)
+        flash[:success] = t('.notice', scope: :flash)
+        respond_with @account, location: -> { root_path(account_name: @account.name) }
       else
         render 'new'
       end
@@ -20,7 +26,7 @@ module Web
 
     def permitted_params
       params.require(:account).permit(:name, :email,
-                                      users_attributes: %i[first_name email password password_confirmation])
+                                      users_attributes: %i[first_name password password_confirmation])
     end
   end
 end

@@ -14,7 +14,7 @@ services:
       dockerfile: Dockerfile.development
     command: make frontend_watch
     volumes:
-      - './services/app:/usr/src/app'
+      - ./services/app:/usr/src/app:cached
     env_file:
       ".env"
   app:

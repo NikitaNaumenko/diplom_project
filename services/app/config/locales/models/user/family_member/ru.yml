@@ -1,11 +1,6 @@
 ru:
   activerecord:
     attributes:
-      user:
-        first_name: Имя
-        work_state:
-          works: Работает
-          doesnt_work: Не работает
       user/family_member:
         first_name: Имя
         last_name: Фамилия

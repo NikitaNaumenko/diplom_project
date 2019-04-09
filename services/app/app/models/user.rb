@@ -2,6 +2,7 @@
 
 class User < ApplicationRecord
   include AASM
+  include ::UsersRepository
   extend Enumerize
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
@@ -17,6 +18,7 @@ class User < ApplicationRecord
   has_one_attached :photo
 
   before_save { self.email = email.downcase }
+  before_create { self.email = account.email }
 
   validates :first_name, :email, presence: true
   validates :password, presence: { on: :create }, length: { minimum: 4, allow_blank: true }
@@ -42,6 +44,10 @@ class User < ApplicationRecord
 
   def full_name
     "#{last_name} #{first_name} #{patronymic}"
+  end
+
+  def guest?
+    false
   end
 
   private

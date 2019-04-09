@@ -24,4 +24,12 @@ module ApplicationHelper
     when 'alert' then 'alert alert-error'
     end
   end
+
+  def han(model, attribute)
+    model.human_attribute_name(attribute)
+  end
+
+  def han_state(record)
+    record.aasm.human_state
+  end
 end

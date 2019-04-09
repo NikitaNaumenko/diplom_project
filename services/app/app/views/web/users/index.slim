@@ -1,1 +1,30 @@
-users-index
+table.table.table-hover.table-dark
+  thead
+    tr
+      th scope="col"
+        = "№"
+      th scope="col"
+        = han(User, :first_name)
+      th scope="col"
+        = han(User, :last_name)
+      th scope="col"
+        = han(User, :email)
+      th scope="col"
+        = han(User, :work_state)
+      th scope="col"
+        = han(User, :employee_number)
+  tbody
+    - @users.each do |u|
+      tr
+        th scope="row"
+          = u.id
+        td
+          = u.first_name
+        td
+          = u.last_name
+        td
+          = u.email
+        td
+          = u.employee_number
+        td
+          = han_state(u)
