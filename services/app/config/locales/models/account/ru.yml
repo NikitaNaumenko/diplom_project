@@ -1,5 +1,8 @@
 ru:
   activerecord:
+    models:
+      account:
+        one: Аккаунт
     attributes:
       account:
         name: Название аккаунта

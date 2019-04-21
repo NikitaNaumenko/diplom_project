@@ -7,7 +7,7 @@ ru:
           alert: "Неправильный email или пароль"
     actions:
       create:
-        notice: '%{resource_name} was successfully created.'
+        notice: '%{resource_name} успешно созздан.'
         alert: '%{resource_name} could not be created.'
       update:
         notice: '%{resource_name} успешно обновлен.'
