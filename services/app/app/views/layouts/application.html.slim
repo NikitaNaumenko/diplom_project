@@ -16,12 +16,12 @@ html
          span.navbar-toggler-icon
       #navbarSupportedContent.collapse.navbar-collapse
         ul.navbar-nav.w-100
-          li.nav-item.active
-            = link_to user_path(current_user), class: "nav-link" do
-              i.fas.fa-user.mx-1
-              = t('.home')
-          li.nav-item
-            a.nav-link href="#"  Link
+          = nav_menu_item(user_path(current_user)) do
+            i.fas.fa-user.mx-1
+            = t('.home')
+          = nav_menu_item(users_path) do
+              i.fas.fa-user-friends.mx-1
+              = t('.users')
           li.nav-item.dropdown
             a#navbarDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button" 
               | Dropdown

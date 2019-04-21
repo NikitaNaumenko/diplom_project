@@ -2,4 +2,5 @@ ru:
   layouts:
     application:
       home: Мои данные
+      users: Сотрудники
       logout: Выход

@@ -1,5 +1,8 @@
 ru:
   activerecord:
+    models:
+      user:
+        one: Сотрудник
     attributes:
       user:
         first_name: Имя
