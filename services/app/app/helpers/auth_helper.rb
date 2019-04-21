@@ -2,7 +2,7 @@
 
 module AuthHelper
   def current_user
-    @current_user ||= account.users.find_by(id: session[:user_id]) || Guest.new
+    @current_user ||= account&.users&.find_by(id: session[:user_id]) || Guest.new
   end
 
   def signed_in?

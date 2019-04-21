@@ -5,7 +5,7 @@ module Web
     skip_before_action :check_current_user
 
     def new
-      return redirect_to root_path if current_user.guest?
+      return redirect_to root_path unless current_user.guest?
 
       @account = AccountType.new
       @account.users.build
@@ -17,7 +17,6 @@ module Web
       if @account.save
         user = @account.users.first
         sign_in(user)
-        flash[:success] = t('.notice', scope: :flash)
         respond_with @account, location: -> { root_path(account_name: @account.name) }
       else
         render 'new'

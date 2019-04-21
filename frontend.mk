@@ -1,8 +1,5 @@
 USER = "$(shell id -u):$(shell id -g)"
 
-frontend_watch:
-	WEBPACKER_DEV_SERVER_HOST=0.0.0.0·bundle·exec·bin/webpack-dev-server
-
 install-vue:
 	docker-compose run --user=$(USER) app bin/rails webpacker:install:vue
 

@@ -16,6 +16,8 @@ gem 'webpacker', '>= 4.0.x'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'aasm'
 gem 'country_select'
+# gem 'ransack'
+gem 'ransack'
 
 gem 'dry-monads'
 gem 'dry-validation'
