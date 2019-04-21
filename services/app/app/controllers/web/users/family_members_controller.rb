@@ -8,7 +8,13 @@ module Web
       end
 
       def create
-        resource_user.family_members.create(params[:user_family_member])
+        resource_user.family_members.create(permitted_params)
+      end
+
+      private
+
+      def permitted_params
+        params.require(:user_family_member).permit(:first_name, :last_name, :patronymic, :birthdate)
       end
     end
   end

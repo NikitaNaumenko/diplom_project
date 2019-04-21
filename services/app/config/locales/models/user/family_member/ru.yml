@@ -3,7 +3,7 @@ ru:
     models:
       user/family_member:
         zero: Членов семьи
-        one: Член семьи
+        one: Члена семьи
         two: Члена семьи
         few: Членов семьи
         many: Членов семьи
