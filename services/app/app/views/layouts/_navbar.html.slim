@@ -1,0 +1,32 @@
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+  = link_to "Personas", root_path, class: 'navbar-brand'
+  = button_tag '', class: "navbar-toggler",  data: { toggle: "collapse", target: "#navbarSupportedContent" },
+    aria: { controls: "navbarSupportedContent", expanded: "false", label: "Toggle navigation" } do
+     span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse
+    ul.navbar-nav.w-100
+      = nav_menu_item(user_path(current_user)) do
+        i.fas.fa-user.mx-1
+        = t('.home')
+      = nav_menu_item(users_path) do
+          i.fas.fa-user-friends.mx-1
+          = t('.users')
+      li.nav-item.dropdown
+        a#navbarDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
+          | Dropdown
+        .dropdown-menu aria-labelledby="navbarDropdown"
+          a.dropdown-item href="#"  Action
+          a.dropdown-item href="#"  Another action
+          .dropdown-divider
+          a.dropdown-item href="#"  Something else here
+      li.nav-item
+        a.nav-link.disabled aria-disabled="true" href="#" tabindex="-1"  Disabled
+      = nav_menu_item(settings_path) do
+          i.fas.fa-cogs.mx-1
+          = t('.settings')
+
+      li.nav-item.ml-auto
+        - if signed_in?
+          = link_to logout_path, method: :delete, data: { confirm: 'asd' }, class: 'nav-link' do
+            i.fas.fa-sign-out-alt.mx-1
+            = t('.logout')

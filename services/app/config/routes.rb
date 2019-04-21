@@ -13,6 +13,7 @@ Rails.application.routes.draw do
         resources :family_members
       end
     end
+    resources :settings, only: :index
     namespace :settings do
       namespace :catalogs do
         resources :skills

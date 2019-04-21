@@ -1,6 +1,13 @@
+---
+
 ru:
   layouts:
-    application:
+    navbar:
       home: Мои данные
       users: Сотрудники
       logout: Выход
+      settings: Настройки
+    web:
+      settings:
+        title: Настройки
+        skills: Навыки

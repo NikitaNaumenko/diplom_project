@@ -10,6 +10,13 @@ html
     = javascript_pack_tag 'application'
   body
     = render 'layouts/navbar'
-    main.container.py-2#app
-      = render 'web/shared/flash'
+    main
+      .bg-light.border-right id="sidebar-wrapper"
+        .sidebar-heading
+          span.fas.fa-cogs.mr-1
+          = t('.title')
+        .list-group.list-group-flush
+          = sidebar_menu_item('skills') do
+            span.fas.fa-book-reader.mr-1
+            = t('.skills')
       = yield
