@@ -1,3 +1,5 @@
+---
+
 ru:
   flash:
     web:
@@ -13,5 +15,5 @@ ru:
         notice: '%{resource_name} успешно обновлен.'
         alert: '%{resource_name} could not be updated.'
       destroy:
-        notice: '%{resource_name} was successfully destroyed.'
+        notice: '%{resource_name} успешно удален.'
         alert: '%{resource_name} could not be destroyed.'

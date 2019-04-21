@@ -1,4 +1,13 @@
+---
+
 ru:
+  enumerize:
+    user/family_member:
+      kinship:
+        father: Отец
+        mother: Мать
+        brother: Брат
+        sister: Сестра
   activerecord:
     models:
       user/family_member:
@@ -14,3 +23,4 @@ ru:
         last_name: Фамилия
         patronymic: Отчество
         birthdate: Дата рождения
+        kinship: Степень родства

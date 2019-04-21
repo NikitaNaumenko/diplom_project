@@ -8,13 +8,32 @@ module Web
       end
 
       def create
-        resource_user.family_members.create(permitted_params)
+        member = resource_user.family_members.create(permitted_params)
+        respond_with member, location: -> { user_path(current_user) }
+      end
+
+      def edit
+        @family_member = resource_user.family_members.find(params[:id])
+      end
+
+      def update
+        member = resource_user.family_members.find(params[:id])
+
+        member.update(permitted_params)
+        respond_with member, location: -> { user_path(current_user) }
+      end
+
+      def destroy
+        member = resource_user.family_members.find(params[:id])
+
+        member.destroy
+        respond_with member, location: -> { user_path(current_user) }
       end
 
       private
 
       def permitted_params
-        params.require(:user_family_member).permit(:first_name, :last_name, :patronymic, :birthdate)
+        params.require(:user_family_member).permit(:first_name, :last_name, :patronymic, :birthdate, :kinship)
       end
     end
   end

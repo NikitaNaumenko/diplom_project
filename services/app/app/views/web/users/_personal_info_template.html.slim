@@ -23,11 +23,12 @@
               th scope='col'
                 = t('.birthdate')
               th scope='col'
+              th scope='col'
           tbody
           - family_members.each do |fm|
             tr
               td
-                = fm.kinship
+                = fm.kinship_text
               td
                 = fm.first_name
               td
@@ -37,7 +38,13 @@
               td
                 = fm.birthdate
               td
-                = link_to user_family_member_path(fm, user), method: :destroy, data: { toggle: "tooltip", placement: "top"}, title: "Tooltip on top" do
+                = link_to edit_user_family_member_path(user, fm),
+                  data: { toggle: "tooltip", placement: "top"}, title: t('.edit') do
+                  span.fas.fa-edit
+
+              td
+                = link_to user_family_member_path(user, fm), method: :delete,
+                  data: { toggle: "tooltip", placement: "top"}, title: t('.destroy') do
                   span.fas.fa-times-circle
 .row
 .row
