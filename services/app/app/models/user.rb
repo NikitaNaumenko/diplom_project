@@ -50,9 +50,7 @@ class User < ApplicationRecord
     false
   end
 
-  def email_empty?
-    email.empty?
-  end
+  delegate :empty?, to: :email, prefix: true
 
   private
 
