@@ -1,0 +1,16 @@
+---
+
+ru:
+  web:
+    settings:
+      index:
+        title: Общие настройки
+      catalogs:
+        skills:
+          index:
+            add: Добавить навык
+            edit: Редактировать навык
+          new:
+            title: Создать навык
+          edit:
+            title: Редактировать навык

@@ -3,6 +3,7 @@
 module Web
   module Settings
     class ApplicationController < ::Web::ApplicationController
+      layout 'web/settings'
     end
   end
 end

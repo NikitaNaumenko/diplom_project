@@ -1,1 +1,31 @@
-settings-catalogs-skill-index
+.row.mb-5
+  .col-12.d-flex
+    = link_to new_settings_catalogs_skill_path, class: 'btn btn-outline-primary ml-auto' do
+      span.fas.fa-plus.mr-1
+      = t('.add')
+.row
+  .col-12
+    table.table.table-hover
+      thead
+        tr
+          th scope="col"
+            '
+              #
+          th scope="col"
+            = han(Skill, :name)
+          th scope="col"
+            = han(Skill, :code)
+          th scope="col"
+            = han(Skill, :description)
+          th scope="col"
+      - @skills.each do |skill|
+        tr
+          th scope="row"
+            = skill.id
+          td= skill.name
+          td= skill.code
+          td= skill.description
+          td
+            = link_to edit_settings_catalogs_skill_path(skill),
+              data: { toggle: "tooltip", placement: "top"}, title: t('.edit') do
+              span.fas.fa-edit

@@ -11,13 +11,24 @@ module BootstrapHelper
   end
 
   def sidebar_menu_item(path = '#')
-    options = { class: "list-group-item list-group-item-action bg-light #{active_link_class(path)}" }
+    options = {
+      class: "list-group-item list-group-item-action #{bg_link_class(path)} #{active_link_class(path)}"
+    }
+
     link_to path, options do
       yield if block_given?
     end
   end
 
   def active_link_class(path)
-    'active' if current_page?(path)
+    'active' if active?(path)
+  end
+
+  def bg_link_class(path)
+    'bg-light' unless active?(path)
+  end
+
+  def active?(path)
+    current_page?(path)
   end
 end

@@ -1,0 +1,17 @@
+---
+
+ru:
+  activerecord:
+    models:
+      skill:
+        zero: Навык
+        one: Навык
+        two: Навыка
+        few: Навыков
+        many: Навыков
+        other: Навыка
+    attributes:
+      skill:
+        name: Название
+        code: Код
+        description: Описание

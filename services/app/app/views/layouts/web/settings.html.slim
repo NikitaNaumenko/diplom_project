@@ -10,13 +10,22 @@ html
     = javascript_pack_tag 'application'
   body
     = render 'layouts/navbar'
-    main
-      .bg-light.border-right id="sidebar-wrapper"
+    main.d-flex#wrapper
+      .bg-light.border-right#sidebar-wrapper
         .sidebar-heading
           span.fas.fa-cogs.mr-1
           = t('.title')
         .list-group.list-group-flush
-          = sidebar_menu_item('skills') do
+          .p-2
+            span.fas.fa-folder-open.mr-1
+            = t('.catalog')
+          = sidebar_menu_item(settings_catalogs_skills_path) do
             span.fas.fa-book-reader.mr-1
             = t('.skills')
-      = yield
+          = sidebar_menu_item('settings_catalogs_educations') do
+            span.fas.fa-book-reader.mr-1
+            = t('.educations')
+
+      .container.py-5#page-content-wrapper
+        = render 'web/shared/flash'
+        = yield

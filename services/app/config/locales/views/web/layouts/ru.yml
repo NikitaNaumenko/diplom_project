@@ -10,4 +10,5 @@ ru:
     web:
       settings:
         title: Настройки
+        catalog: Справочники
         skills: Навыки
