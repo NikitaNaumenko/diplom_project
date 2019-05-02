@@ -1,1 +1,31 @@
-settings-catalogs-educations-index
+.row.mb-5
+  .col-12.d-flex
+    = link_to new_settings_catalogs_education_path, class: 'btn btn-outline-primary ml-auto' do
+      span.fas.fa-plus.mr-1
+      = t('.add')
+.row
+  .col-12
+    table.table.table-hover
+      thead
+        tr
+          th scope="col"
+            '
+              #
+          th scope="col"
+            = han(Skill, :name)
+          th scope="col"
+            = han(Skill, :code)
+          th scope="col"
+            = han(Skill, :description)
+          th scope="col"
+      - @educations.each do |ed|
+        tr
+          th scope="row"
+            = ed.id
+          td= ed.name
+          td= ed.code
+          td= ed.description
+          td
+            = link_to edit_settings_catalogs_skill_path(ed),
+              data: { toggle: "tooltip", placement: "top"}, title: t('.edit') do
+              span.fas.fa-edit

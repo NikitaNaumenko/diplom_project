@@ -14,7 +14,7 @@ module Web
 
         test 'should response have skills collection' do
           @user_session.get settings_catalogs_skills_url(subdomain: @account.name)
-          assert_response :success
+          @user_session.assert_response :success
         end
 
         test 'should change skills count after create' do
@@ -27,8 +27,7 @@ module Web
 
         test 'should response new be success' do
           @user_session.get new_settings_catalogs_skill_path(subdomain: @account.name)
-          @response = @user_session.response
-          assert_response :success
+          @user_session.assert_response :success
         end
       end
     end

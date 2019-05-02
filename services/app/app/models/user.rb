@@ -10,15 +10,15 @@ class User < ApplicationRecord
   has_secure_password
 
   belongs_to :account
-  has_many :user_skills, class_name: User::Skill.name, dependent: :destroy
+  has_many :user_skills, class_name: 'User::Skill', dependent: :destroy
   has_many :skills, through: :user_skills
-  has_many :user_educations, class_name: User::Education.name, dependent: :destroy
+  has_many :user_educations, class_name: 'User::Education', dependent: :destroy
   has_many :educations, through: :user_educations
-  has_many :family_members, class_name: User::FamilyMember.name, dependent: :destroy
+  has_many :family_members, class_name: 'User::FamilyMember', dependent: :destroy
   has_one_attached :photo
 
   before_save { self.email = email.downcase }
-  before_create { self.email = account.email }
+  before_create { self.email = account.email if email_empty? }
 
   validates :first_name, :email, presence: true
   validates :password, presence: { on: :create }, length: { minimum: 4, allow_blank: true }
@@ -48,6 +48,10 @@ class User < ApplicationRecord
 
   def guest?
     false
+  end
+
+  def email_empty?
+    email.empty?
   end
 
   private

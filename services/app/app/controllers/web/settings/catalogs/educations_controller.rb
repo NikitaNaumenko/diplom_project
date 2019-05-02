@@ -6,24 +6,25 @@ module Web
       class EducationsController < ApplicationController
         def index
           @educations = account.educations.ordered
-          respond_to do |format|
-            format.html
-            format.json do
-              render json: { educations: @educations }.to_json
-            end
-          end
         end
 
-        def new; end
+        def new
+          @education = account.educations.new
+        end
 
         def create
-          education = account.educations.new(permitted_params)
-          if education.save
-            render json: { redirect_path: settings_catalogs_educations_path }.to_json
-          else
-            render json: { redirect_path: new_settings_catalogs_education_path,
-                           errors: education.errors.full_messages.first }.to_json
-          end
+          education = account.educations.create(permitted_params)
+          respond_with education, location: -> { settings_catalogs_educations_path }
+        end
+
+        def edit
+          @education = account.educations.find(params[:id])
+        end
+
+        def update
+          education = account.educations.find(params[:id])
+          education.update(permitted_params)
+          respond_with education, location: -> { settings_catalogs_educations_path }
         end
 
         private

@@ -1,0 +1,17 @@
+---
+
+ru:
+  activerecord:
+    models:
+      education:
+        zero: Образования
+        one: Образование
+        two: Образования
+        few: Образования
+        many: Образования
+        other: Образования
+    attributes:
+      education:
+        name: Название
+        code: Код
+        description: Описание
