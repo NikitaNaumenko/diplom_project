@@ -10,3 +10,5 @@ ru:
     submit:
       users_login_type:
         create: Войти
+      account_moi_krug_secret:
+        create: Создать

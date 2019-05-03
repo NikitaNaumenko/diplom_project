@@ -32,4 +32,8 @@ module ApplicationHelper
   def han_state(record)
     record.aasm.human_state
   end
+
+  def mhn(model, option)
+    model.model_name.human(option)
+  end
 end

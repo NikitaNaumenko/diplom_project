@@ -1,19 +1,13 @@
 # frozen_string_literal: true
 
 class Account < ApplicationRecord
-  has_settings do |s|
-    s.key :moi_krug, defaults: {
-      client_id: nil,
-      client_secret: nil
-    }
-  end
-
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
 
   has_many :users, dependent: :destroy
   has_many :skills, dependent: :destroy
   has_many :educations, dependent: :destroy
-  has_one :moi_krug_token, class_name: Token::MoiKrug.name, dependent: :destroy
+  has_many :moi_krug_secrets, class_name: 'Account::MoiKrugSecret', dependent: :destroy
+  has_one :moi_krug_token, class_name: 'Token::MoiKrug', dependent: :destroy
 
   before_save { self.email = email.downcase }
 
@@ -23,4 +17,6 @@ class Account < ApplicationRecord
   validates :email, format: { with: VALID_EMAIL_REGEX }
 
   accepts_nested_attributes_for :users
+
+  delegate :present?, to: :moi_krug_token, prefix: true
 end

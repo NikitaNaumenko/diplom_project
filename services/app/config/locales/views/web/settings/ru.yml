@@ -22,3 +22,14 @@ ru:
             title: Создать образование
           edit:
             title: Редактировать образование
+      integrations:
+        moi_krug:
+          index:
+            title: Мой круг
+            add: Добавить ключ
+            ping: Проверить
+            edit: Редактировать
+          new:
+            title: Создать ключ
+          edit:
+            title: Редактировать ключ

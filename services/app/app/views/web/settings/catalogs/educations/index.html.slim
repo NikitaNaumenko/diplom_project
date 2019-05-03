@@ -1,6 +1,8 @@
 .row.mb-5
-  .col-12.d-flex
-    = link_to new_settings_catalogs_education_path, class: 'btn btn-outline-primary ml-auto' do
+  .col-12.col-lg-8
+    h2= mhn(Education, count: 1)
+  .col-12.col-lg-4
+    = link_to new_settings_catalogs_education_path, class: 'btn btn-outline-primary float-right' do
       span.fas.fa-plus.mr-1
       = t('.add')
 .row
