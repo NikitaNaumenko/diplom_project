@@ -1,0 +1,11 @@
+.row
+  .col-12
+    .card.my-2
+      h2.text-lg-center.my-2
+        = t('.title')
+      .card-body
+        = simple_form_for [:settings_catalogs, @position], wrapper: :horizontal_form do |f|
+          = render 'web/shared/flash'
+          .row
+            .col-12.push-lg-4.personal-info
+              = render 'form', f: f

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_03_081801) do
+ActiveRecord::Schema.define(version: 2019_05_04_110807) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,17 @@ ActiveRecord::Schema.define(version: 2019_05_03_081801) do
     t.index ["account_id", "code"], name: "index_educations_on_account_id_and_code"
     t.index ["account_id"], name: "index_educations_on_account_id"
     t.index ["code"], name: "index_educations_on_code"
+  end
+
+  create_table "positions", force: :cascade do |t|
+    t.string "name"
+    t.string "code"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "account_id"
+    t.index ["account_id"], name: "index_positions_on_account_id"
+    t.index ["code"], name: "index_positions_on_code"
   end
 
   create_table "settings", force: :cascade do |t|
@@ -155,6 +166,7 @@ ActiveRecord::Schema.define(version: 2019_05_03_081801) do
   add_foreign_key "account_moi_krug_secrets", "accounts"
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "educations", "accounts"
+  add_foreign_key "positions", "accounts"
   add_foreign_key "skills", "accounts"
   add_foreign_key "token_moi_krugs", "accounts"
   add_foreign_key "user_educations", "educations"

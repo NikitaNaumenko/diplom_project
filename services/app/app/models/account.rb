@@ -6,6 +6,7 @@ class Account < ApplicationRecord
   has_many :users, dependent: :destroy
   has_many :skills, dependent: :destroy
   has_many :educations, dependent: :destroy
+  has_many :positions, dependent: :destroy
   has_many :moi_krug_secrets, class_name: 'Account::MoiKrugSecret', dependent: :destroy
   has_one :moi_krug_token, class_name: 'Token::MoiKrug', dependent: :destroy
 

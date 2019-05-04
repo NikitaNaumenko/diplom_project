@@ -23,8 +23,11 @@ html
             span.fas.fa-book-reader.mr-1
             = t('.skills')
           = sidebar_menu_item(settings_catalogs_educations_path) do
-            span.fas.fa-book-reader.mr-1
+            span.fas.fa-book.mr-1
             = t('.educations')
+          = sidebar_menu_item(settings_catalogs_positions_path) do
+            span.fas.fa-user-tie.mr-1
+            = t('.positions')
           .p-2
             span.fas.fa-plug.mr-1
             = t('.integration')

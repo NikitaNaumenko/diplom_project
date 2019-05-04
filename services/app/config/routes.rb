@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       namespace :catalogs do
         resources :skills
         resources :educations
+        resources :positions
       end
 
       namespace :integrations do

@@ -1,0 +1,17 @@
+---
+
+ru:
+  activerecord:
+    models:
+      position:
+        zero: Должность
+        one: Должность
+        two: Должности
+        few: Дожности
+        many: Должностей
+        other: Должности
+    attributes:
+      position:
+        name: Название
+        code: Код
+        description: Описание

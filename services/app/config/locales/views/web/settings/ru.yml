@@ -22,6 +22,14 @@ ru:
             title: Создать образование
           edit:
             title: Редактировать образование
+        positions:
+          index:
+            add: Добавить должность
+            edit: Редактировать должность
+          new:
+            title: Создать должность
+          edit:
+            title: Редактировать должность
       integrations:
         moi_krug:
           index:

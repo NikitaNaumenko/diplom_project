@@ -1,0 +1,33 @@
+.row.mb-5
+  .col-12.col-lg-8
+    h2= mhn(Position, count: 2)
+  .col-12.col-lg-4
+    = link_to new_settings_catalogs_position_path, class: 'btn btn-outline-primary float-right' do
+      span.fas.fa-plus.mr-1
+      = t('.add')
+.row
+  .col-12
+    table.table.table-hover
+      thead
+        tr
+          th scope="col"
+            '
+              #
+          th scope="col"
+            = han(Position, :name)
+          th scope="col"
+            = han(Position, :code)
+          th scope="col"
+            = han(Position, :description)
+          th scope="col"
+      - @positions.each do |position|
+        tr
+          th scope="row"
+            = position.id
+          td= position.name
+          td= position.code
+          td= position.description
+          td
+            = link_to edit_settings_catalogs_position_path(position),
+              data: { toggle: "tooltip", placement: "top"}, title: t('.edit') do
+              span.fas.fa-edit
