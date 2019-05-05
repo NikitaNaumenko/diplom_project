@@ -3,7 +3,7 @@
 module Web
   module Settings
     module Catalogs
-      class PositionsController < ApplicationController
+      class PositionsController < Web::Settings::Catalogs::ApplicationController
         def index
           @positions = account.positions.ordered
         end

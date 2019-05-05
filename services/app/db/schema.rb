@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_04_110807) do
+ActiveRecord::Schema.define(version: 2019_05_05_165512) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,17 @@ ActiveRecord::Schema.define(version: 2019_05_04_110807) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "departments", force: :cascade do |t|
+    t.string "name"
+    t.string "code"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "account_id"
+    t.index ["account_id"], name: "index_departments_on_account_id"
+    t.index ["code"], name: "index_departments_on_code"
   end
 
   create_table "educations", force: :cascade do |t|
@@ -165,6 +176,7 @@ ActiveRecord::Schema.define(version: 2019_05_04_110807) do
 
   add_foreign_key "account_moi_krug_secrets", "accounts"
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "departments", "accounts"
   add_foreign_key "educations", "accounts"
   add_foreign_key "positions", "accounts"
   add_foreign_key "skills", "accounts"

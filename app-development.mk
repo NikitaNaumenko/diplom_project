@@ -4,7 +4,7 @@ app-setup: development-setup app-build
 	docker-compose run app bin/setup
 
 app-bash:
-	docker-compose run --user=$(USER) app bash
+	docker-compose exec app bash
 
 app-console:
 	docker-compose run --user=$(USER) app bin/rails console

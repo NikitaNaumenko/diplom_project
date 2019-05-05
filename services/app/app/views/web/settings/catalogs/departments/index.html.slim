@@ -1,0 +1,33 @@
+.row.mb-5
+  .col-12.col-lg-8
+    h2= mhn(Department, count: 2)
+  .col-12.col-lg-4
+    = link_to new_settings_catalogs_department_path, class: 'btn btn-outline-primary float-right' do
+      span.fas.fa-plus.mr-1
+      = t('.add')
+.row
+  .col-12
+    table.table.table-hover
+      thead
+        tr
+          th scope="col"
+            '
+              #
+          th scope="col"
+            = han(Department, :name)
+          th scope="col"
+            = han(Department, :code)
+          th scope="col"
+            = han(Department, :description)
+          th scope="col"
+      - @departments.each do |department|
+        tr
+          th scope="row"
+            = department.id
+          td= department.name
+          td= department.code
+          td= department.description
+          td
+            = link_to edit_settings_catalogs_department_path(department),
+              data: { toggle: "tooltip", placement: "top"}, title: t('.edit') do
+              span.fas.fa-edit

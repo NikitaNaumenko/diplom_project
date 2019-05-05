@@ -3,7 +3,7 @@
 module Web
   module Settings
     module Catalogs
-      class EducationsController < ApplicationController
+      class EducationsController < Web::Settings::Catalogs::ApplicationController
         def index
           @educations = account.educations.ordered
         end

@@ -1,0 +1,15 @@
+---
+
+ru:
+  activerecord:
+    models:
+      department:
+        one: Подразделение
+        few: Подразделения
+        many: Подразделений
+        other: Подразделений
+    attributes:
+      department:
+        name: Название
+        code: Код
+        description: Описание

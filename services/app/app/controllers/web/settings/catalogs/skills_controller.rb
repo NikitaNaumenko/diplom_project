@@ -3,7 +3,7 @@
 module Web
   module Settings
     module Catalogs
-      class SkillsController < ApplicationController
+      class SkillsController < Web::Settings::Catalogs::ApplicationController
         def index
           @skills = account.skills.ordered
         end
