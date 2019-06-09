@@ -32,6 +32,7 @@ Lint/AmbiguousBlockAssociation:
 Style/Documentation:
   Exclude:
     - 'app/controllers/**/*'
+    - 'app/policies/**/*'
     - 'app/models/**/*'
     - 'app/helpers/**/*'
     - 'test/**/*'

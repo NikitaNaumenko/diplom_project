@@ -6,6 +6,9 @@
       = link_to settings_integrations_moi_krug_ping_path, class: 'btn btn-outline-primary float-right' do
         span.fas.fa-network-wired.mr-1
         = t('.ping')
+      = link_to settings_integrations_moi_krug_auth_path, class: 'btn btn-outline-primary float-right' do
+        span.fas.fa-network-wired.mr-1
+        = t('.authorize')
     - else
       = link_to new_settings_integrations_moi_krug_path, class: 'btn btn-outline-primary float-right' do
         span.fas.fa-plus.mr-1

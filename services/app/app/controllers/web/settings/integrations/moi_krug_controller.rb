@@ -10,6 +10,8 @@ module Web
         end
 
         def ping
+          secrets = account.moi_krug_secrets.last.attributes.slice('client_id', 'client_secret')
+          @oauth_client = ::MoiKrug::OAuthClient.new(secrets).call
         end
 
         def new

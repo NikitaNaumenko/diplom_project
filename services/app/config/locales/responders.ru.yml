@@ -1,6 +1,13 @@
 ---
 
 ru:
+  web:
+    settings:
+      integrations:
+        moi_krug:
+          callback_urls:
+            index:
+              success: 'Успешная авторизация'
   flash:
     web:
       sessions:

@@ -3,11 +3,11 @@
 module MoiKrug
   # Oauth client for moi krug api
   class OAuthClient
-    def initialize(setting)
+    def initialize(settings)
       @credentials = {
         url: ENV['MOI_KRUG_URL'],
-        client_id: setting.client_id,
-        client_secret: setting.client_secret
+        client_id: settings['client_id'],
+        client_secret: settings['client_secret']
       }
     end
 

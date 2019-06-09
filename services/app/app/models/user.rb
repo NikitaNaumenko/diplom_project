@@ -27,6 +27,7 @@ class User < ApplicationRecord
   validates :email, format: { with: VALID_EMAIL_REGEX }
 
   enumerize :gender, in: %i[male female]
+  enumerize :role, in: %i[admin lead employee], default: :employee
   enumerize :marital_status, in: %i[widowed civil_marriage married divorced single]
 
   aasm(column: :work_state) do

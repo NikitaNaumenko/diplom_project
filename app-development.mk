@@ -1,6 +1,8 @@
 USER = "$(shell id -u):$(shell id -g)"
 
-app-setup: development-setup app-build
+app-build:
+	docker compose build
+app-setup: app-build
 	docker-compose run app bin/setup
 
 app-bash:

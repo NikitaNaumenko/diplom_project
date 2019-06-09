@@ -26,7 +26,7 @@ Rails.application.routes.draw do
         resources :moi_krug, except: :show
         namespace :moi_krug do
           get :ping
-          resources :auth_urls, only: :create
+          resource :auth, only: :show
           resources :callback_urls, only: :index
         end
       end
