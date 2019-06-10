@@ -10,6 +10,8 @@ class User < ApplicationRecord
   has_secure_password
 
   belongs_to :account
+  belongs_to :position
+  belongs_to :department
   has_many :user_skills, class_name: 'User::Skill', dependent: :destroy
   has_many :skills, through: :user_skills
   has_many :user_educations, class_name: 'User::Education', dependent: :destroy
