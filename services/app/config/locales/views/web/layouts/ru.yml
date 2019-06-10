@@ -7,6 +7,10 @@ ru:
       users: Сотрудники
       logout: Выход
       settings: Настройки
+      moi_krug_integration: Mой Круг
+      new_vacancy: Создать вакансию
+      edit_vacancy: Редактировать вакансию
+      vacancies: Открытые вакансии
     web:
       settings:
         title: Настройки

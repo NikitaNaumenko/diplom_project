@@ -13,6 +13,12 @@ Rails.application.routes.draw do
         resources :family_members
       end
     end
+    namespace :integrations do
+      # resources :moi_krug
+      namespace :moi_krug do
+        resources :vacancies
+      end
+    end
     resources :settings, only: :index
     namespace :settings do
       namespace :catalogs do

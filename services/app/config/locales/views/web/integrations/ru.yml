@@ -1,0 +1,15 @@
+---
+
+ru:
+  web:
+    integrations:
+      moi_krug:
+        vacancies:
+          index:
+            vacancies: Вакансии
+            title: Название
+            published_at: Дата публикации
+            url: Ссылка
+            location: Город
+            employment_type: Тип занятости
+            salary: Зарплата

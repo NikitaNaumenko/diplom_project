@@ -1,0 +1,38 @@
+.row.mb-5
+  .col-12.col-lg-8
+    h2= t('.vacancies')
+.row
+  .col-12
+    table.table.table-hover
+      thead
+        tr
+          th scope="col"
+            = t('.id')
+          th scope="col"
+            = t('.title')
+          th scope="col"
+            = t('.published_at')
+          th scope="col"
+            = t('.url')
+          th scope="col"
+            = t('.location')
+          th scope="col"
+            = t('.employment_type')
+          th scope="col"
+            = t('.salary')
+          th scope="col"
+      - @vacancies.each do |v|
+        tr
+          th scope="row"
+            = v[:id]
+          td= v[:title]
+          td= v[:published_at]
+          td
+            = link_to v[:url]
+          td= v[:location]
+          td= v[:employment_type]
+          td= v[:salary]
+          / td
+          /   = link_to edit_settings_catalogs_skill_path(skill),
+          /     data: { toggle: "tooltip", placement: "top"}, title: t('.edit') do
+          /     span.fas.fa-edit

@@ -5,7 +5,8 @@ module Web
     skip_before_action :check_current_user
 
     def new
-      redirect_to root_path if signed_in?  @form = ::Users::LoginType.new
+      redirect_to root_path if signed_in?
+      @form = ::Users::LoginType.new
     end
 
     def create

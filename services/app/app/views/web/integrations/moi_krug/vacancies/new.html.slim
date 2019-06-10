@@ -1,0 +1,14 @@
+.row
+  .col-12
+    .card.my-2
+      h2.text-lg-center.my-2
+        = t('.title')
+      .card-body
+        = simple_form_for @vacancy, url: integrations_moi_krug_vacancies_path, wrapper: :horizontal_form do |f|
+          = render 'web/shared/flash'
+          .row
+            .col-12.push-lg-4.personal-info
+              = f.input :name
+              = f.input :code
+              = f.input :description
+              = f.button :submit, class: 'btn btn-primary'

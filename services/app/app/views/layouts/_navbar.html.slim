@@ -11,12 +11,17 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
       = nav_menu_item(users_path) do
           i.fas.fa-user-friends.mx-1
           = t('.users')
+      - if @account.moi_krug_secrets.any?
       li.nav-item.dropdown
         a#navbarDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
-          | Dropdown
+          = t('.moi_krug_integration')
         .dropdown-menu aria-labelledby="navbarDropdown"
-          a.dropdown-item href="#"  Action
-          a.dropdown-item href="#"  Another action
+          = link_to new_integrations_moi_krug_vacancy_path, class: 'dropdown-item' do
+            = t('.new_vacancy')
+          / = link_to edit_integrations_moi_krug_vacancy_path, class: 'dropdown-item' do
+          /   = t('.edit_vacancy')
+          = link_to integrations_moi_krug_vacancies_path, class: 'dropdown-item' do
+            = t('.vacancies')
           .dropdown-divider
           a.dropdown-item href="#"  Something else here
       li.nav-item
