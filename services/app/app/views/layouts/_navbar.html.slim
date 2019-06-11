@@ -18,12 +18,9 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
         .dropdown-menu aria-labelledby="navbarDropdown"
           = link_to new_integrations_moi_krug_vacancy_path, class: 'dropdown-item' do
             = t('.new_vacancy')
-          / = link_to edit_integrations_moi_krug_vacancy_path, class: 'dropdown-item' do
           /   = t('.edit_vacancy')
           = link_to integrations_moi_krug_vacancies_path, class: 'dropdown-item' do
             = t('.vacancies')
-          .dropdown-divider
-          a.dropdown-item href="#"  Something else here
       li.nav-item
         a.nav-link.disabled aria-disabled="true" href="#" tabindex="-1"  Disabled
       = nav_menu_item(settings_path) do

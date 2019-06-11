@@ -13,3 +13,5 @@ ru:
             location: Город
             employment_type: Тип занятости
             salary: Зарплата
+          new:
+            title: Создать вакансию в МойКруг

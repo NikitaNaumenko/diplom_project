@@ -4,7 +4,7 @@ module Web
   module Integrations
     class ApplicationController < ::Web::ApplicationController
       def client
-        @client ||= Kruger::Client.new(access_token: account.moi_krug_token.token)
+        @client ||= Kruger::Client.new(access_token: account.moi_krug_token.access_token)
       end
     end
   end

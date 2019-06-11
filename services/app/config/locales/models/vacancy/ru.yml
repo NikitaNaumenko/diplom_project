@@ -1,0 +1,15 @@
+ru:
+  activemodel:
+    models:
+      vacancy:
+        one: Вакансию
+    attributes:
+      vacancy:
+        title: Название
+        salary_from: Зарплата От
+        salary_to: Зарплата до
+        city_id: Город
+        remote: Тип работы
+        employment_type: Тип занятости
+        description: Описание
+        skills: Навыки

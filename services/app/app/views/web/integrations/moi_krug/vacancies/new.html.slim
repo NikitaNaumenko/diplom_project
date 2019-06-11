@@ -8,7 +8,13 @@
           = render 'web/shared/flash'
           .row
             .col-12.push-lg-4.personal-info
-              = f.input :name
-              = f.input :code
+              = f.input :title
+              = f.input :salary_from
+              = f.input :salary_to
+              = f.input :currency
+              = f.input :city_id, collection: ['Москва']
+              = f.input :remote, collection: ['Удаленная работа', 'В Офисе']
+              = f.input :employment_type, collection: ['Полная занятость', ' Частичная занятость']
               = f.input :description
+              = f.input :skills, collection: Skill.all
               = f.button :submit, class: 'btn btn-primary'
